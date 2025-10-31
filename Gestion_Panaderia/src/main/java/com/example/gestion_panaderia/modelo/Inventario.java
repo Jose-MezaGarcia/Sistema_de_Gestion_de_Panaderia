@@ -1,5 +1,8 @@
 package com.example.gestion_panaderia.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Inventario {
     private List<Producto> productos;
 
