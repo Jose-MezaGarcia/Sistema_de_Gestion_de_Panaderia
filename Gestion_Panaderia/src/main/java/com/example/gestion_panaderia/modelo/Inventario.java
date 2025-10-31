@@ -2,6 +2,7 @@ package com.example.gestion_panaderia.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.Gson;
 
 public class Inventario {
     private List<Producto> productos;
@@ -10,51 +11,56 @@ public class Inventario {
         this.productos = new ArrayList<>();
     }
 
-    public Producto buscarPorNombre(String nombre){
-       for(int i = 0; i < productos.size(); i++){
-           producto p = productos.get(i)
-           if(p.getNombre().equalsIgnoreCase(nombre)){
-               return p;
-           }
-       }
-       return null;
+    public Producto buscarPorNombre(String nombre) {
+        for (int i = 0; i < productos.size(); i++) {
+            Producto p = productos.get(i);
+            if (p.getNombre().equalsIgnoreCase(nombre)) {
+                return p;
+            }
+        }
+        return null;
     }
 
-    public void agregarProducto(Producto p){
+    public void agregarProducto(Producto p) {
         this.productos.add(p);
     }
-    public void eliminarProducto(String idProducto){
-        for (int i = 0; i < productos.size(); i++){
-            producto p = productos.get(i);
-            if (p.getId().equals(idProducto)){
+
+    public boolean eliminarProducto(String codigo) {
+        for (int i = 0; i < productos.size(); i++) {
+            Producto p = productos.get(i);
+            if (p.getCodigo().equals(codigo)) {
                 productos.remove(i);
                 return true;
             }
         }
         return false;
+    }
 
-    public boolean actualizarStock(String idProducto, int cantidad){
+    _
+    public boolean actualizarStock(String codigo, int cantidadAAgregar) {
         Producto productoEncontrado = null;
 
-        for(int i = 0; i < productos.size(); i++){
+        for (int i = 0; i < productos.size(); i++) {
             Producto p = productos.get(i);
-            if (p.getId().equals(idProducto)){
+            if (p.getCodigo().equals(codigo)) {
                 productoEncontrado = p;
                 break;
             }
         }
 
-        if(productoEncontrado != null){
+        if (productoEncontrado != null) {
+            productoEncontrado.actualizarStock(cantidadAAgregar);
             return true;
         }
         return false;
     }
 
-    public void agregarProducto(Producto p){
-        this.productos.add(p);
+    public List<Producto> getProductos() {
+        return productos;
     }
 
-    public ArrayList<Producto> getProductos(){
-        retrun productos;
-        }
+    public String toJson() {
+        Gson gson = new Gson();
+        return gson.toJson(this.productos);
+    }
 }
