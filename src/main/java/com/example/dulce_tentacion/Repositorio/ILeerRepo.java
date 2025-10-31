@@ -1,4 +1,7 @@
 package com.example.dulce_tentacion.Repositorio;
 
-public interface ILeerRepo {
+import java.util.List;
+
+public interface ILeerRepo<T> {
+    List<T> leer(); // Método leer datos desde archivo o fuente
 }
