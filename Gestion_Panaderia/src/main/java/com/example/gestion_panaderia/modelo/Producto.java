@@ -1,14 +1,14 @@
 package com.example.gestion_panaderia.modelo;
 
 public class Producto {
-    private String id;
+    private String codigo;
     private String nombre;
     private String precio;
     private int stock;
     private Categoria categoria;
 
-    public Producto(String id, String nombre, String precio, int stock, Categoria categoria ) {
-        this.id = id;
+    public Producto(String codigo, String nombre, String precio, int stock, Categoria categoria ) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
@@ -20,10 +20,10 @@ public class Producto {
 
     @Override
     public String toString() {
-        return id + "|" + nombre + "| $" + String.format("%.2f", precio);
+        return codigo + "|" + nombre + "| $" + String.format("%.2f", precio);
     }
-    public String getId() {
-        return id;
+    public String getCodigo() {
+        return codigo;
     }
     public String getNombre() {
         return nombre;
