@@ -1,31 +1,44 @@
-package com.example.dulce_tentacion.Servicio;
+package com.example.gestion_panaderia.Servicio;
 
-import com.example.dulce_tentacion.Modelo.Usuario;
-import com.example.dulce_tentacion.Repositorio.IRepositorio;
-
+import com.example.gestion_panaderia.Repositorio.ILeerRepo;
+import com.example.gestion_panaderia.modelo.Usuario;
 import java.util.List;
 
 /**
- * Implementación del servicio de autenticación.
- * Depende del repositorio de usuarios (IRepositorio<Usuario>).
+ * Implementa la autenticación de usuarios usando el repositorio.
  */
-
 public class AutenServicio implements IAutenServicio {
 
-    private final IRepositorio<Usuario> userRepo; // Depende del paquete Repositorio
+    private final ILeerRepo<Usuario> usuarioRepo;
 
-    public AutenServicio(IRepositorio<Usuario> userRepo) {
-        this.userRepo = userRepo;
+    public AutenServicio(ILeerRepo<Usuario> usuarioRepo) {
+        this.usuarioRepo = usuarioRepo;
     }
 
     @Override
-    public Usuario autenticar(String usuario, String contrasena) {
-        // Implementar búsqueda real en userRepo cuando Usuario esté disponible
+    public Usuario autenticar(String usuario, String contraseña) {
+        List<Usuario> usuarios = usuarioRepo.leer();
+
+        if (usuarios == null || usuarios.isEmpty()) {
+            System.out.println("No hay usuarios registrados.");
+            return null;
+        }
+
+        for (Usuario u : usuarios) {
+            if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
+                System.out.println("Inicio de sesión correcto: " + u.getNombre());
+                return u;
+            }
+        }
+
+        System.out.println("Credenciales incorrectas.");
         return null;
     }
 
     @Override
     public void logout(Usuario usuario) {
-        // Implementar lógica para cierre de sesión
+        if (usuario != null) {
+            System.out.println("Usuario " + usuario.getNombre() + " ha cerrado sesión.");
+        }
     }
 }

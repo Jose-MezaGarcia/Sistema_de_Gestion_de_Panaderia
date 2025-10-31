@@ -1,18 +1,16 @@
-package com.example.dulce_tentacion.Servicio;
+package com.example.gestion_panaderia.Servicio;
 
-import com.example.dulce_tentacion.Modelo.Producto;
+import com.example.gestion_panaderia.modelo.Producto;
 import java.util.List;
 
 /**
- * Interfaz que define las operaciones relacionadas con los productos.
+ * Define las operaciones del servicio de productos.
  */
 public interface IProductoServicio {
 
     void agregarProducto(Producto p);
 
-    void actualizarProducto(Producto p);
-
-    Producto buscarPorId(String id);
+    Producto buscarPorCodigo(String codigo);
 
     List<Producto> listarProductos();
 }

@@ -1,41 +1,47 @@
-package com.example.dulce_tentacion.Servicio;
+package com.example.gestion_panaderia.Servicio;
 
-import com.example.dulce_tentacion.Modelo.Producto;
-import com.example.dulce_tentacion.Repositorio.IRepositorio;
+import com.example.gestion_panaderia.Repositorio.ILeerRepo;
+import com.example.gestion_panaderia.Repositorio.IEscribirRepo;
+import com.example.gestion_panaderia.modelo.Producto;
 
 import java.util.List;
 
 /**
- * Implementación de la lógica de negocio para productos.
- * Depende del repositorio de productos (IRepositorio<Producto>).
+ * Implementa las operaciones del servicio de productos.
  */
+
 public class ProductoServicio implements IProductoServicio {
 
-    private final IRepositorio<Producto> productoRepo; // Depende de la capa Repositorio
+    private final ILeerRepo<Producto> lector;
+    private final IEscribirRepo<Producto> escritor;
 
-    public ProductoServicio(IRepositorio<Producto> productoRepo) {
-        this.productoRepo = productoRepo;
+    public ProductoServicio(ILeerRepo<Producto> lector, IEscribirRepo<Producto> escritor) {
+        this.lector = lector;
+        this.escritor = escritor;
     }
 
     @Override
     public void agregarProducto(Producto p) {
-        // Implementar lógica para agregar un producto (leer, agregar, guardar)
+        List<Producto> productos = lector.leer();
+        productos.add(p);
+        escritor.escribir(productos);
+        System.out.println("Producto agregado: " + p.getNombre());
     }
 
     @Override
-    public void actualizarProducto(Producto p) {
-        // Implementar actualización de producto existente
-    }
+    public Producto buscarPorCodigo(String codigo) {
+        List<Producto> productos = lector.leer();
 
-    @Override
-    public Producto buscarPorId(String id) {
-        // Implementar búsqueda de producto por ID
+        for (Producto p : productos) {
+            if (p.getCodigo().equals(codigo)) {
+                return p;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Producto> listarProductos() {
-        // Implementar lectura de lista de productos desde el repositorio
-        return null;
+        return lector.leer();
     }
 }

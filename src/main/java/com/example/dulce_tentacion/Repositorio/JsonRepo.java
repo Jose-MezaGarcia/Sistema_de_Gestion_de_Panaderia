@@ -1,35 +1,50 @@
-package com.example.dulce_tentacion.Repositorio;
+package com.example.gestion_panaderia.Repositorio;
 
-import java.util.List;
-import java.io.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-// Esta clase depende de las entidades del Modelo (Producto, Venta, etc.)
-public class JsonRepo<T> implements IRepo<T>, ILeerRepo<T>, IEscribirRepo<T> {
-    private final String filePath;
-    private final Gson gson = new Gson();
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
-    public JsonRepo(String filePath) {
-        this.filePath = filePath;
+/**
+ * Implementación genérica para leer y escribir datos en formato JSON.
+ */
+public class JsonRepo<T> implements ILeerRepo<T>, IEscribirRepo<T> {
+
+    private final String rutaArchivo;
+    private final Type tipoLista;
+    private final Gson gson;
+
+    public JsonRepo(String rutaArchivo, Type tipoLista) {
+        this.rutaArchivo = rutaArchivo;
+        this.tipoLista = tipoLista;
+        this.gson = new Gson();
     }
 
     @Override
     public List<T> leer() {
-        try (Reader reader = new FileReader(filePath)) {
-            return gson.fromJson(reader, new TypeToken<List<T>>() {}.getType());
+        try (FileReader lector = new FileReader(rutaArchivo)) {
+            List<T> datos = gson.fromJson(lector, tipoLista);
+            if (datos == null) {
+                return new ArrayList<>();
+            }
+            return datos;
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+            System.out.println("No se pudo leer el archivo: " + e.getMessage());
+            return new ArrayList<>();
         }
     }
 
     @Override
     public void escribir(List<T> datos) {
-        try (Writer writer = new FileWriter(filePath)) {
-            gson.toJson(datos, writer);
+        try (FileWriter escritor = new FileWriter(rutaArchivo)) {
+            gson.toJson(datos, escritor);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
     }
 }

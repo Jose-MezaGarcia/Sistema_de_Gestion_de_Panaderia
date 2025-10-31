@@ -1,33 +1,48 @@
-package com.example.dulce_tentacion.Servicio;
+package com.example.gestion_panaderia.Servicio;
 
-import com.example.dulce_tentacion.Modelo.DetalleVenta;
-import com.example.dulce_tentacion.Modelo.Empleado;
-import com.example.dulce_tentacion.Modelo.Venta;
-import com.example.dulce_tentacion.Repositorio.IRepositorio;
+import com.example.gestion_panaderia.Repositorio.ILeerRepo;
+import com.example.gestion_panaderia.Repositorio.IEscribirRepo;
+import com.example.gestion_panaderia.modelo.DetalleVenta;
+import com.example.gestion_panaderia.modelo.Empleado;
+import com.example.gestion_panaderia.modelo.Venta;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
- * Implementación de la lógica de negocio para ventas.
- * Depende del repositorio de ventas (IRepositorio<Venta>).
+ * Implementa las operaciones del servicio de ventas.
  */
 public class VentaServicio implements IVentaServicio {
 
-    private final IRepositorio<Venta> ventaRepo; // Depende del paquete Repositorio
+    private final ILeerRepo<Venta> lector;
+    private final IEscribirRepo<Venta> escritor;
 
-    public VentaServicio(IRepositorio<Venta> ventaRepo) {
-        this.ventaRepo = ventaRepo;
+    public VentaServicio(ILeerRepo<Venta> lector, IEscribirRepo<Venta> escritor) {
+        this.lector = lector;
+        this.escritor = escritor;
     }
 
     @Override
     public Venta registrarVenta(List<DetalleVenta> detalles, Empleado vendedor) {
-        // Crear objeto Venta, calcular total, guardar en ventaRepo
-        return null;
+        String id = UUID.randomUUID().toString();
+        Venta nuevaVenta = new Venta(id, vendedor);
+
+        for (DetalleVenta detalle : detalles) {
+            nuevaVenta.agregarDetalle(detalle);
+        }
+
+        nuevaVenta.calcularTotal();
+
+        List<Venta> ventas = lector.leer();
+        ventas.add(nuevaVenta);
+        escritor.escribir(ventas);
+
+        System.out.println("Venta registrada correctamente. Total: $" + nuevaVenta.getTotal());
+        return nuevaVenta;
     }
 
     @Override
     public List<Venta> listarVentas() {
-        // Implementar lectura de todas las ventas desde el repositorio
-        return null;
+        return lector.leer();
     }
 }
