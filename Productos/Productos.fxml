@@ -1,163 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 
 <BorderPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fffaf0;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
 
-    <!-- MENÚ LATERAL -->
+    <!-- MENÚ LATERAL IZQUIERDO -->
     <left>
         <VBox prefWidth="180" spacing="10" style="-fx-background-color: #ffcc33; -fx-padding: 12; -fx-alignment: TOP_CENTER;">
+
             <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" text="🍞 DULCE TENTACIÓN" />
             <Separator prefWidth="160" style="-fx-background-color: #5c4033;" />
-            <Button text="🏠 Inicio" />
-            <Button text="🧁 Productos" />
-            <Button text="💰 Ventas" />
-            <Button text="📋 Pedidos" />
-            <Button text="📊 Inventario" />
-            <Button text="👥 Clientes" />
-            <Button text="🧾 Recibos" />
-            <Button text="📈 Reportes" />
+
+            <Button text="🏠 Inicio" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="🧁 Productos" prefWidth="160" style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="💰 Ventas" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="📋 Pedidos" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="📊 Inventario" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="👥 Clientes" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="🧾 Recibos" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+            <Button text="📈 Reportes" prefWidth="160" style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 11px;" />
+
+            <Separator prefWidth="160" style="-fx-background-color: #5c4033;" />
+
+            <VBox spacing="4" style="-fx-background-color: #fff2cc; -fx-background-radius: 6; -fx-padding: 6;">
+                <Label text="👤 Usuario actual" style="-fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-font-size: 10px;" />
+                <Label text="Administrador" style="-fx-text-fill: #5c4033; -fx-font-size: 9px;" />
+                <Label text="admin@dulcetentacion.com" style="-fx-text-fill: #5c4033; -fx-font-size: 8px;" />
+            </VBox>
+
         </VBox>
     </left>
 
-    <!-- CENTRO -->
+    <!-- SECCIÓN CENTRAL DE PRODUCTOS -->
     <center>
         <VBox alignment="TOP_CENTER" spacing="15" style="-fx-padding: 10;">
-            <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" text="📦 GESTIÓN DE PRODUCTOS" />
+            <Label text="📦 GESTIÓN DE PRODUCTOS" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
 
             <!-- GALLETAS -->
             <VBox alignment="TOP_LEFT" spacing="5">
-                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-padding: 0 0 3 8;" text="🍪 GALLETAS" />
+                <Label text="🍪 GALLETAS" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-padding: 0 0 3 8;" />
                 <HBox alignment="TOP_CENTER" spacing="10">
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <!-- Espacio para imagen -->
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/galleta1.png" />
-                            </image>
-                        </ImageView>
-                        <Label style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" text="Galletas Chocolate" />
-                        <Label style="-fx-font-size: 8px;" text="ID: G001" />
-                        <Label style="-fx-font-size: 8px;" text="Stock: 20" />
+
+                    <!-- Galleta 1 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Galletas Chocolate" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: G001" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 20" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/galleta2.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Galletas de Avena" />
-                        <Label text="ID: G002" />
-                        <Label text="Stock: 15" />
+                    <!-- Galleta 2 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Galletas Avena" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: G002" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 15" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/galleta3.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Galletas de Coco" />
-                        <Label text="ID: G003" />
-                        <Label text="Stock: 10" />
+                    <!-- Galleta 3 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Galletas Mantequilla" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: G003" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 25" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
                 </HBox>
             </VBox>
 
             <!-- PASTELES -->
             <VBox alignment="TOP_LEFT" spacing="5">
-                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" text="🍰 PASTELES" />
+                <Label text="🍰 PASTELES" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-padding: 0 0 3 8;" />
                 <HBox alignment="TOP_CENTER" spacing="10">
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pastel1.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Pastel de Chocolate" />
-                        <Label text="ID: P001" />
-                        <Label text="Stock: 8" />
+
+                    <!-- Pastel 1 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Pastel Chocolate" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: P001" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 8" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pastel2.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Pastel de Fresa" />
-                        <Label text="ID: P002" />
-                        <Label text="Stock: 6" />
+                    <!-- Pastel 2 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Pastel Fresa" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: P002" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 6" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pastel3.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Pastel Tres Leches" />
-                        <Label text="ID: P003" />
-                        <Label text="Stock: 5" />
+                    <!-- Pastel 3 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Pastel Vainilla" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: P003" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 10" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
                 </HBox>
             </VBox>
 
             <!-- PANES -->
             <VBox alignment="TOP_LEFT" spacing="5">
-                <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" text="🥐 PANES" />
+                <Label text="🥐 PANES" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-padding: 0 0 3 8;" />
                 <HBox alignment="TOP_CENTER" spacing="10">
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pan1.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Pan Blanco" />
-                        <Label text="ID: B001" />
-                        <Label text="Stock: 15" />
+
+                    <!-- Pan 1 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Pan Blanco" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: B001" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 15" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pan2.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Pan de Centeno" />
-                        <Label text="ID: B002" />
-                        <Label text="Stock: 12" />
+                    <!-- Pan 2 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Pan Integral" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: B002" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 12" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
 
-                    <VBox alignment="CENTER" prefHeight="140" prefWidth="120" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
-                        <ImageView fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <image>
-                                <Image url="@images/pan3.png" />
-                            </image>
-                        </ImageView>
-                        <Label text="Concha" />
-                        <Label text="ID: B003" />
-                        <Label text="Stock: 18" />
+                    <!-- Pan 3 -->
+                    <VBox alignment="CENTER" spacing="4" style="-fx-background-color: #fff9e6; -fx-background-radius: 8; -fx-padding: 8;">
+                        <ImageView fitHeight="100" fitWidth="100" />
+                        <Label text="Croissant" style="-fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #5c4033;" />
+                        <Label text="ID: B003" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
+                        <Label text="Stock: 18" style="-fx-font-size: 8px; -fx-text-fill: #5c4033;" />
                     </VBox>
                 </HBox>
             </VBox>
 
-            <!-- BOTONES -->
+            <!-- BOTONES GENERALES -->
             <HBox alignment="CENTER" spacing="15" style="-fx-padding: 10;">
-                <Button text="➕ AGREGAR" />
-                <Button text="➖ QUITAR" />
-                <Button text="✏️ EDITAR" />
+                <Button text="➕ AGREGAR" prefWidth="110" style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button text="➖ QUITAR" prefWidth="110" style="-fx-background-color: #ffd966; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button text="✏️ EDITAR" prefWidth="110" style="-fx-background-color: #8bc34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
             </HBox>
+
         </VBox>
     </center>
-</BorderPane>
-
-        </center>
 </BorderPane>
 
         </BorderPane>
