@@ -1,0 +1,56 @@
+[
+  {
+    "id": "001",
+    "nombre": "Concha de Vainilla",
+    "precio": 10.0,
+    "stock": 31,
+    "categoria": {
+      "nombre": "Pan Dulce"
+    }
+  },
+  {
+    "id": "002",
+    "nombre": "Croissant",
+    "precio": 15.0,
+    "stock": 11,
+    "categoria": {
+      "nombre": "Panadería Francesa"
+    }
+  },
+  {
+    "id": "003",
+    "nombre": "Pastel de Chocolate",
+    "precio": 250.0,
+    "stock": 10,
+    "categoria": {
+      "nombre": "Pastelería"
+    }
+  },
+  {
+    "id": "004",
+    "nombre": "Dona Glaseada",
+    "precio": 12.0,
+    "stock": 40,
+    "categoria": {
+      "nombre": "Repostería"
+    }
+  },
+  {
+    "id": "005",
+    "nombre": "Pan Integral",
+    "precio": 25.0,
+    "stock": 25,
+    "categoria": {
+      "nombre": "Panadería Saludable"
+    }
+  },
+  {
+    "id": "006",
+    "nombre": "Cupcake de Fresa",
+    "precio": 18.0,
+    "stock": 35,
+    "categoria": {
+      "nombre": "Cupcakes"
+    }
+  }
+]
