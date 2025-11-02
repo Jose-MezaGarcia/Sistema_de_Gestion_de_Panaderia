@@ -1,0 +1,42 @@
+[
+  {
+    "id": "V-66c6c0b7",
+    "fecha": "2025-11-02T13:09:04.647599275",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 31,
+          "categoria": {
+            "nombre": "Pan Dulce"
+          }
+        },
+        "cantidad": 13,
+        "subtotal": 130.0
+      },
+      {
+        "producto": {
+          "id": "001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 31,
+          "categoria": {
+            "nombre": "Pan Dulce"
+          }
+        },
+        "cantidad": 20,
+        "subtotal": 200.0
+      }
+    ],
+    "total": 330.0
+  }
+]
