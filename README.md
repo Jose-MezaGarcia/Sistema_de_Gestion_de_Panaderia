@@ -3,10 +3,10 @@
 
 ## Características Especiales
 
-- **Diseño Personalizado**: Interfaz con tema "Dulce Tentación" en colores amarillos/dorados
-- **Login Elegante**: Pantalla de bienvenida con efectos visuales
-- **Sistema de Ventas**: Búsqueda por código, cálculo automático
-- **Arquitectura MVC + SOLID**: Código limpio y mantenible
+- **Diseño Personalizado**: Interfaz con tema "Dulce Tentación"
+- **Login Elegante**: Pantalla de bienvenida con imagen logo
+- **Sistema de Ventas**: Búsqueda por ID, cálculo automático
+- **Arquitectura MVC + SOLID**: Código modular
 - **Persistencia JSON**: Datos guardados con Gson
 
 ## Requisitos
@@ -14,13 +14,6 @@
 - Java 17 o superior
 - Maven 3.6 o superior
 
-## Instalación y Ejecución
-
-```bash
-cd gestion-panaderia
-mvn clean compile
-mvn javafx:run
-```
 
 ## Credenciales
 
