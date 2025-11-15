@@ -1,5 +1,16 @@
 package com.example.gestion_panaderia.model;
 
+/**
+ * Representa un usuario dentro del sistema de gestión de panadería.
+ * Contiene información básica de identificación y autenticación,
+ * incluyendo id, nombre, usuario y contraseña.
+ *
+ * Esta clase sirve como base para otras entidades como {@link Cliente} y {@link Empleado},
+ * que extienden sus atributos y funcionalidades.
+ *
+ * @author ¿?
+ * @version ¿?
+ */
 public class Usuario {
     private String id;
     private String nombre;
