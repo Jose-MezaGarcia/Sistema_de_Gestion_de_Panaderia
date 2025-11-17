@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="700" prefWidth="1200"
+            style="-fx-background-color: #fffaf0;">
+
+    <!-- Menú lateral con colores -->
+    <left>
+        <VBox spacing="12" prefWidth="200"
+              style="-fx-background-color: #ffcc33; -fx-padding: 15;">
+
+            <Label text="DULCE TENTACIÓN"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+
+            <Separator prefWidth="170" style="-fx-background-color: #5c4033;"/>
+
+            <Button text="Inicio" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Productos" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Ventas" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Pedidos" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Inventario" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Clientes" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Recibos" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+            <Button text="Reportes" prefWidth="170" prefHeight="35"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10; -fx-font-size: 12px;"/>
+
+            <Separator prefWidth="170" style="-fx-background-color: #5c4033;"/>
+
+            <VBox spacing="5" style="-fx-background-color: #fff2cc; -fx-background-radius: 8; -fx-padding: 8;">
+                <Label text="Usuario actual" style="-fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-font-size: 11px;"/>
+                <Label text="Administrador" style="-fx-text-fill: #5c4033; -fx-font-size: 10px;"/>
+                <Label text="admin@dulcetentacion.com" style="-fx-text-fill: #5c4033; -fx-font-size: 9px;"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Contenido principal -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Label text="GESTIÓN DE RECIBOS"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+
+            <!-- Barra de búsqueda y acciones -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <TextField promptText="Buscar recibo por número o cliente..."
+                           prefWidth="300" prefHeight="35"
+                           style="-fx-background-radius: 8; -fx-font-size: 12px;"/>
+                <Button text="Buscar" prefWidth="100" prefHeight="35"
+                        style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px;"/>
+            </HBox>
+
+            <!-- Tabla de recibos -->
+            <TableView prefHeight="350" style="-fx-background-radius: 8;">
+                <columns>
+                    <TableColumn text="Número" prefWidth="80"/>
+                    <TableColumn text="Fecha" prefWidth="100"/>
+                    <TableColumn text="Cliente" prefWidth="150"/>
+                    <TableColumn text="Productos" prefWidth="120"/>
+                    <TableColumn text="Precio Unit." prefWidth="90"/>
+                    <TableColumn text="Cantidad" prefWidth="70"/>
+                    <TableColumn text="Subtotal" prefWidth="90"/>
+                    <TableColumn text="Total" prefWidth="90"/>
+                </columns>
+            </TableView>
+
+            <!-- Detalles del recibo seleccionado -->
+            <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dddddd; -fx-border-width: 1;">
+                <Label text="DETALLES DEL RECIBO" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+
+                <HBox spacing="30">
+                    <VBox spacing="5">
+                        <Label text="Recibo: #00123" style="-fx-font-weight: bold;"/>
+                        <Label text="Fecha: 15/11/2024 14:30"/>
+                        <Label text="Cliente: Juan Pérez Hernández"/>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Productos:" style="-fx-font-weight: bold;"/>
+                        <Label text="• Pastel Chocolate - $250.00 x1"/>
+                        <Label text="• Galletas Avena - $45.00 x2"/>
+                        <Label text="• Pan Integral - $30.00 x3"/>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Totales:" style="-fx-font-weight: bold;"/>
+                        <Label text="Subtotal: $430.00"/>
+                        <Label text="IVA (10%): $43.00"/>
+                        <Label text="TOTAL: $473.00" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Botón de Total General -->
+                <HBox alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+                    <Button text="TOTAL GENERAL: $473.00"
+                            prefWidth="250" prefHeight="40"
+                            style="-fx-background-color: #ff8c00; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 14px;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Botones de acción -->
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Imprimir" prefWidth="100" prefHeight="35"
+                        style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px;"/>
+                <Button text="Guardar PDF" prefWidth="110" prefHeight="35"
+                        style="-fx-background-color: #42a5f5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px;"/>
+                <Button text="Enviar Email" prefWidth="110" prefHeight="35"
+                        style="-fx-background-color: #8bc34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px;"/>
+                <Button text="Eliminar" prefWidth="100" prefHeight="35"
+                        style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-font-size: 12px;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
