@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="1200" prefHeight="700"
+            style="-fx-background-color: #fff6cc;">
+
+    <!-- MENÚ LATERAL IZQUIERDO -->
+    <left>
+        <VBox prefWidth="250" spacing="10"
+              style="-fx-background-color: linear-gradient(to bottom, #ffb347, #ffcc33); -fx-padding: 20; -fx-alignment: TOP_CENTER;">
+
+            <Label text="🍞 DULCE TENTACIÓN"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.5), 2,0,0,1);"/>
+
+            <Separator prefWidth="210" style="-fx-background-color: #5c4033;"/>
+
+            <!-- BOTONES DEL MENÚ -->
+            <Button text="📦 Productos" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Button text="💰 Ventas" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Button text="📋 Pedidos" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Button text="📊 Inventario" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Button text="👥 Clientes" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, #cc6600, 6, 0.3, 0, 1);"/>
+
+            <Button text="🧾 Recibos" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Button text="📈 Reportes" prefWidth="210" prefHeight="40"
+                    style="-fx-background-color: #fff6cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-color: #ffcc33; -fx-border-radius: 12;"/>
+
+            <Separator prefWidth="210" style="-fx-background-color: #5c4033;"/>
+
+            <!-- BARRA DE BÚSQUEDA EN MENÚ -->
+            <VBox spacing="10" style="-fx-padding: 10 0 0 0;">
+                <Label text="Buscar Cliente" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                <HBox spacing="5">
+                    <TextField promptText="Nombre, ID..." prefWidth="160" prefHeight="35"
+                               style="-fx-background-radius: 15; -fx-background-color: white; -fx-border-color: #ffcc33; -fx-padding: 0 10;"/>
+                    <Button text="🔍" prefWidth="35" prefHeight="35"
+                            style="-fx-background-color: #ff8c00; -fx-text-fill: white; -fx-background-radius: 17;"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CONTENIDO PRINCIPAL DE CLIENTES -->
+    <center>
+        <AnchorPane style="-fx-padding: 20;">
+            <VBox spacing="20">
+                <!-- ENCABEZADO -->
+                <HBox alignment="CENTER_LEFT" spacing="15" prefHeight="70"
+                      style="-fx-background-color: linear-gradient(to right, #ffb347, #ffcc33); -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="👥 Gestión de Clientes - Dulce Tentación"
+                           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                </HBox>
+
+                <!-- CONTENEDOR DE CLIENTES -->
+                <HBox spacing="20" prefHeight="550">
+
+                    <!-- SECCIÓN IZQUIERDA - LISTA Y CALIFICACIÓN -->
+                    <VBox prefWidth="400" spacing="15">
+                        <!-- LISTA DE CLIENTES -->
+                        <VBox spacing="10" prefHeight="250"
+                              style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-border-color: #ffcc33; -fx-border-radius: 10;">
+                            <Label text="📋 Lista de Clientes"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                            <TableView fx:id="clientesTable" prefWidth="370" prefHeight="180"
+                                       style="-fx-background-color: white; -fx-border-color: #ffcc33;">
+                                <columns>
+                                    <TableColumn prefWidth="100" text="ID" style="-fx-background-color: #fff6cc;"/>
+                                    <TableColumn prefWidth="200" text="Nombre" style="-fx-background-color: #fff6cc;"/>
+                                    <TableColumn prefWidth="70" text="Calif." style="-fx-background-color: #fff6cc;"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <!-- BOTONES DE CALIFICACIÓN -->
+                        <VBox spacing="10" prefHeight="280"
+                              style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15; -fx-border-color: #ffcc33; -fx-border-radius: 10;">
+                            <Label text="😊 Calificar Cliente"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+
+                            <!-- BOTONES DE CARRITAS -->
+                            <HBox spacing="10" alignment="CENTER">
+                                <Button text="😊" prefWidth="80" prefHeight="60"
+                                        style="-fx-background-color: #8FBC8F; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                                <Button text="😐" prefWidth="80" prefHeight="60"
+                                        style="-fx-background-color: #FFD54F; -fx-background-radius: 15; -fx-text-fill: #5c4033; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                                <Button text="😠" prefWidth="80" prefHeight="60"
+                                        style="-fx-background-color: #EF9A9A; -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+                            </HBox>
+
+                            <!-- CALIFICACIÓN ACTUAL -->
+                            <VBox spacing="5" style="-fx-padding: 10; -fx-background-color: #fff6cc; -fx-background-radius: 8; -fx-border-color: #ffcc33;">
+                                <Label text="Calificación Actual:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                                <Label fx:id="calificacionActualLabel" text="Sin calificar"
+                                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- SECCIÓN DERECHA - FORMULARIO DEL CLIENTE -->
+                    <VBox prefWidth="500" spacing="15"
+                          style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-border-color: #ffcc33; -fx-border-radius: 10;">
+
+                        <Label text="📄 Información del Cliente"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+
+                        <!-- FORMULARIO -->
+                        <GridPane hgap="15" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="120"/>
+                                <ColumnConstraints prefWidth="350"/>
+                            </columnConstraints>
+
+                            <children>
+                                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                                       style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                                <TextField promptText="Nombre completo" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                           style="-fx-background-radius: 8; -fx-padding: 8; -fx-background-color: white; -fx-border-color: #ffcc33;"/>
+
+                                <Label text="ID Cliente:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                                       style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                                <TextField promptText="ID único" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                           style="-fx-background-radius: 8; -fx-padding: 8; -fx-background-color: white; -fx-border-color: #ffcc33;"/>
+
+                                <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                                       style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                                <TextField promptText="Número telefónico" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                           style="-fx-background-radius: 8; -fx-padding: 8; -fx-background-color: white; -fx-border-color: #ffcc33;"/>
+
+
+                                <Label text="Email:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                                       style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                                <TextField promptText="Correo electrónico" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                                           style="-fx-background-radius: 8; -fx-padding: 8; -fx-background-color: white; -fx-border-color: #ffcc33;"/>
+                            </children>
+                        </GridPane>
+
+                        <!-- PREFERENCIAS -->
+                        <VBox spacing="8">
+                            <Label text="Preferencias:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                            <TextArea prefWidth="460" prefHeight="80" promptText="Preferencias del cliente..."
+                                      style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 8; -fx-background-color: white; -fx-border-color: #ffcc33;"
+                                      wrapText="true"/>
+                        </VBox>
+
+                        <!-- HISTORIAL -->
+                        <VBox spacing="8">
+                            <Label text="Historial de Calificaciones:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                            <TableView prefWidth="460" prefHeight="100"
+                                       style="-fx-background-color: white; -fx-border-color: #ffcc33;">
+                                <columns>
+                                    <TableColumn prefWidth="100" text="Fecha" style="-fx-background-color: #fff6cc;"/>
+                                    <TableColumn prefWidth="80" text="Calif." style="-fx-background-color: #fff6cc;"/>
+                                    <TableColumn prefWidth="280" text="Comentarios" style="-fx-background-color: #fff6cc;"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <!-- BOTONES DE ACCIÓN -->
+                        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+                            <Button text="➕ Agregar" prefWidth="100" prefHeight="35"
+                                    style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                            <Button text="💾 Guardar" prefWidth="100" prefHeight="35"
+                                    style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                            <Button text="🗑️ Eliminar" prefWidth="100" prefHeight="35"
+                                    style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                            <Button text="🔄 Limpiar" prefWidth="100" prefHeight="35"
+                                    style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </AnchorPane>
+    </center>
+</BorderPane>
