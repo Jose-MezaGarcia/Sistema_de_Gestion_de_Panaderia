@@ -90,11 +90,11 @@ gestion-panaderia/
 
 ##  Principios Aplicados
 
-✅ **MVC** - Model View Controller
-✅ **SOLID** - Principios de diseño
-✅ **DI** - Dependency Injection
-✅ **Repository Pattern** - Datos abstraídos
-✅ **Generic Types** - Repositorio reutilizable
+**MVC** - Model View Controller
+**SOLID** - Principios de diseño
+**DI** - Dependency Injection
+**Repository Pattern** - Datos abstraídos
+**Generic Types** - Repositorio reutilizable
 
 ## Tecnologías
 
