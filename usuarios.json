@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "nombre": "Administrador",
+    "usuario": "admin",
+    "password": "admin123",
+    "rol": "Administrador"
+  },
+  {
+    "id": "2",
+    "nombre": "jose meza",
+    "usuario": "jose",
+    "password": "jose123",
+    "rol": "Vendedor"
+  },
+  {
+    "id": "3",
+    "nombre": "jazmin och",
+    "usuario": "jazmin",
+    "password": "jazmin123",
+    "rol": "Vendedor"
+  },
+  {
+    "id": "3",
+    "nombre": "cynthia aguilar",
+    "usuario": "cynthia",
+    "password": "cynthia123",
+    "rol": "Vendedor"
+  },
+  {
+    "id": "3",
+    "nombre": "brayan maldonado",
+    "usuario": "brayan",
+    "password": "brayan123",
+    "rol": "Vendedor"
+  }
+
+]

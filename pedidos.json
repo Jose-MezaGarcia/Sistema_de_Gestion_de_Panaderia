@@ -1,0 +1,13 @@
+[
+  {
+    "id": "PED-1764046941013",
+    "titulo": "pastel de queso",
+    "cliente": "C004",
+    "fechaEntrega": "2025-11-28",
+    "horaEntrega": "11:30",
+    "descripcion": "",
+    "estado": "PENDIENTE",
+    "telefono": "9872663727",
+    "fechaCreacion": "2025-11-24T23:02:21.013031007"
+  }
+]

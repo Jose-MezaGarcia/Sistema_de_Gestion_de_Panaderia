@@ -1,0 +1,110 @@
+[
+  {
+    "id": "MP001",
+    "nombre": "Harina de Trigo",
+    "precio": 25.50,
+    "stock": 150,
+    "categoria": {
+      "nombre": "Harinas"
+    }
+  },
+  {
+    "id": "MP002",
+    "nombre": "Azúcar Blanca",
+    "precio": 18.75,
+    "stock": 80,
+    "categoria": {
+      "nombre": "Azúcares y Endulzantes"
+    }
+  },
+  {
+    "id": "MP003",
+    "nombre": "Mantequilla",
+    "precio": 45.20,
+    "stock": 25,
+    "categoria": {
+      "nombre": "Lácteos"
+    }
+  },
+  {
+    "id": "MP004",
+    "nombre": "Huevos",
+    "precio": 32.00,
+    "stock": 12,
+    "categoria": {
+      "nombre": "Huevos"
+    }
+  },
+  {
+    "id": "MP005",
+    "nombre": "Aceite Vegetal",
+    "precio": 28.50,
+    "stock": 40,
+    "categoria": {
+      "nombre": "Grasas y Aceites"
+    }
+  },
+  {
+    "id": "MP006",
+    "nombre": "Levadura Seca",
+    "precio": 15.80,
+    "stock": 8,
+    "categoria": {
+      "nombre": "Levaduras"
+    }
+  },
+  {
+    "id": "MP007",
+    "nombre": "Almendras",
+    "precio": 120.00,
+    "stock": 15,
+    "categoria": {
+      "nombre": "Frutos Secos"
+    }
+  },
+  {
+    "id": "MP008",
+    "nombre": "Fresas",
+    "precio": 35.50,
+    "stock": 5,
+    "categoria": {
+      "nombre": "Frutas"
+    }
+  },
+  {
+    "id": "MP009",
+    "nombre": "Chocolate Amargo",
+    "precio": 65.25,
+    "stock": 20,
+    "categoria": {
+      "nombre": "Chocolates"
+    }
+  },
+  {
+    "id": "MP010",
+    "nombre": "Canela Molida",
+    "precio": 42.30,
+    "stock": 3,
+    "categoria": {
+      "nombre": "Especias"
+    }
+  },
+  {
+    "id": "MP011",
+    "nombre": "Leche Entera",
+    "precio": 22.00,
+    "stock": 30,
+    "categoria": {
+      "nombre": "Lácteos"
+    }
+  },
+  {
+    "id": "MP012",
+    "nombre": "Nueces",
+    "precio": 95.50,
+    "stock": 10,
+    "categoria": {
+      "nombre": "Frutos Secos"
+    }
+  }
+]

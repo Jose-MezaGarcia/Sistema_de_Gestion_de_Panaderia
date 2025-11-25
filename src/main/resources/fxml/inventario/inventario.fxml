@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.gestion_panaderia.controller.InventarioController"
+            prefWidth="1000" prefHeight="600"
+            style="-fx-background-color: linear-gradient(to bottom right, #fff6cc, #ffe6a1);">
+
+    <!-- MENÚ LATERAL -->
+    <left>
+        <VBox prefWidth="220" spacing="15"
+              style="-fx-background-color: linear-gradient(to bottom, #ffb347, #ffcc33); -fx-padding: 20; -fx-alignment: TOP_CENTER;">
+
+            <Label text=" DULCE TENTACIÓN"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.5), 2,0,0,1);"/>
+
+            <!--- inicio de seccion de botones -->
+
+            <Separator prefWidth="180" style="-fx-background-color: #5c4033;"/>
+
+
+            <Button fx:id="btnVentas" text=" Ventas" prefWidth="180" prefHeight="40"
+                    onAction="#abrirVentas"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Button fx:id="btnPedidos" text=" Pedidos" prefWidth="180" prefHeight="40"
+                    onAction="#abrirPedidos"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Button fx:id="btnProductos" text=" Productos" prefWidth="180" prefHeight="40"
+                    onAction="#abrirProductos"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Button fx:id="btnInventario" text=" Inventario" prefWidth="180" prefHeight="40"
+                    onAction="#abrirInventario"
+                    style="-fx-background-color: #ffb84d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, #cc6600, 6, 0.3, 0, 1);"/>
+
+            <Button fx:id="btnClientes" text=" Clientes" prefWidth="180" prefHeight="40"
+                    onAction="#abrirClientes"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Button fx:id="btnRecibos" text=" Recibos" prefWidth="180" prefHeight="40"
+                    onAction="#abrirRecibos"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Button fx:id="btnReportes" text=" Reportes" prefWidth="180" prefHeight="40"
+                    onAction="#abrirReportes"
+                    style="-fx-background-color: #fff2cc; -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 12;"/>
+
+            <Separator prefWidth="180" style="-fx-background-color: #5c4033;"/>
+            <!--- fin de seccion de botones -->
+
+
+            <!--- ficha del usuario activi -->
+            <VBox spacing="6" style="-fx-background-color: #fff2cc; -fx-background-radius: 10; -fx-padding: 10;">
+                <Label text="👤 Usuario actual"
+                       style="-fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                <Label fx:id="usuarioActual" text="Administrador"
+                       style="-fx-text-fill: #5c4033; -fx-font-size: 12px;"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <AnchorPane style="-fx-padding: 20;">
+            <VBox spacing="20" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <!-- ENCABEZADO -->
+                <HBox alignment="CENTER_LEFT" spacing="15" prefHeight="70"
+                      style="-fx-background-color: linear-gradient(to right, #ffb84d, #ffcc33); -fx-padding: 10; -fx-background-radius: 10;">
+                    <Label text="Inventario - Dulce Tentación"
+                           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                </HBox>
+
+                <!-- BÚSQUEDA Y FILTROS -->
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <VBox spacing="5">
+                        <Label text="Buscar:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                        <TextField fx:id="txtBuscarInventario" promptText="Nombre o código" prefWidth="200"
+                                   style="-fx-background-radius: 10; -fx-border-color: #ffcc33; -fx-border-radius: 10;"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Categoría:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                        <ComboBox fx:id="cmbCategoriaInventario" promptText="Todas" prefWidth="130"
+                                  style="-fx-background-radius: 10;"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Estado:" style="-fx-font-weight: bold; -fx-text-fill: #5c4033;"/>
+                        <ComboBox fx:id="cmbEstadoStock" promptText="Todos" prefWidth="130"
+                                  style="-fx-background-radius: 10;"/>
+                    </VBox>
+                    <VBox alignment="BOTTOM_CENTER">
+                        <Button fx:id="btnBuscarInventario" text="Buscar" prefWidth="100"
+                                onAction="#buscarInventario"
+                                style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                    </VBox>
+                    <VBox alignment="BOTTOM_CENTER">
+                        <Button fx:id="btnAgregarProducto" text="+ Agregar" prefWidth="100"
+                                onAction="#agregarProducto"
+                                style="-fx-background-color: linear-gradient(to bottom, #28a745, #5cb85c); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- INDICADORES DE STOCK -->
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox spacing="5" alignment="CENTER" prefWidth="140"
+                          style="-fx-background-color: #fff2cc; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #28a745; -fx-border-width: 2; -fx-border-radius: 10;">
+                        <Label text="Stock Óptimo" style="-fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblStockOptimo" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #28a745;"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER" prefWidth="140"
+                          style="-fx-background-color: #fff2cc; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #ffc107; -fx-border-width: 2; -fx-border-radius: 10;">
+                        <Label text="Stock Bajo" style="-fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblStockBajo" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #ffc107;"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER" prefWidth="140"
+                          style="-fx-background-color: #fff2cc; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #dc3545; -fx-border-width: 2; -fx-border-radius: 10;">
+                        <Label text="Sin Stock" style="-fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblSinStock" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #dc3545;"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER" prefWidth="140"
+                          style="-fx-background-color: #fff2cc; -fx-background-radius: 10; -fx-padding: 12; -fx-border-color: #17a2b8; -fx-border-width: 2; -fx-border-radius: 10;">
+                        <Label text="Total Productos" style="-fx-font-weight: bold; -fx-text-fill: #5c4033; -fx-font-size: 12px;"/>
+                        <Label fx:id="lblTotalProductos" text="0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #17a2b8;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- TABLA DE INVENTARIO -->
+                <TableView fx:id="tableInventario" VBox.vgrow="ALWAYS"
+                           style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #ffcc33;">
+                    <columns>
+                        <TableColumn fx:id="colCodigoInv" text="Código" prefWidth="80"/>
+                        <TableColumn fx:id="colProductoInv" text="Producto" prefWidth="200"/>
+                        <TableColumn fx:id="colCategoriaInv" text="Categoría" prefWidth="120"/>
+                        <TableColumn fx:id="colStockActual" text="Stock Actual" prefWidth="100"/>
+                        <TableColumn fx:id="colStockMinimo" text="Stock Mínimo" prefWidth="100"/>
+                        <TableColumn fx:id="colEstadoInv" text="Estado" prefWidth="120"/>
+                    </columns>
+                </TableView>
+
+                <!-- BOTONES DE ACCIÓN -->
+                <HBox alignment="CENTER_RIGHT" spacing="15">
+                    <Button fx:id="btnEditarInventario" text="Editar"
+                            onAction="#editarInventario"
+                            style="-fx-background-color: linear-gradient(to bottom, #17a2b8, #5bc0de); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                    <Button fx:id="btnActualizarStock" text="Actualizar Stock"
+                            onAction="#actualizarStock"
+                            style="-fx-background-color: linear-gradient(to bottom, #ff8c00, #ffb84d); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, #ffb347, 6, 0.3, 0, 1);"/>
+                    <Button fx:id="btnEliminarProducto" text="Eliminar"
+                            onAction="#eliminarProducto"
+                            style="-fx-background-color: linear-gradient(to bottom, #dc3545, #c82333); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                    <Button fx:id="btnExportarInventario" text="Exportar Excel"
+                            onAction="#exportarInventario"
+                            style="-fx-background-color: linear-gradient(to bottom, #ffd966, #ffcc33); -fx-text-fill: #5c4033; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+                </HBox>
+            </VBox>
+        </AnchorPane>
+    </center>
+</BorderPane>
