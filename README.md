@@ -140,10 +140,11 @@ Sistema completo de gestión para panadería con diseño personalizado en tonos 
 - Maven 3.6 o superior
 
 ## Instalación y Ejecución
+```
 cd gestion-panaderia
 mvn clean compile
 mvn javafx:run
-
+```
 
 ## Credenciales
 
@@ -193,6 +194,7 @@ mvn javafx:run
 - Botones con gradientes llamativos
 
 ## Estructura del Proyecto
+```
 gestion-panaderia/
 ├── src/main/
 │   ├── java/com/example/gestion_panaderia/
@@ -206,19 +208,19 @@ gestion-panaderia/
 ├── usuarios.json          # Datos de usuarios
 ├── productos.json         # Catálogo de productos
 └── ventas.json            # Registro de ventas
-
+```
 
 
 ## Principios Aplicados
-
+```
 **MVC** - Model View Controller
 **SOLID** - Principios de diseño
 **DI** - Dependency Injection
 **Repository Pattern** - Datos abstraídos
 **Generic Types** - Repositorio reutilizable
+```
 
 ## Tecnologías
-
 - **Java 17**
 - **JavaFX 17**
 - **Gson 2.10.1**
