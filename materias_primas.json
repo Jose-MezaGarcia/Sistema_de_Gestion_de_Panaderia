@@ -1,0 +1,148 @@
+[
+  {
+    "id": "MP001",
+    "nombre": "Harina de Trigo",
+    "precio": 25.5,
+    "stock": 60,
+    "categoria": {
+      "id": "CAT_3134221E",
+      "nombre": "Harinas",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.976000459"
+    },
+    "activo": false,
+    "fechaActualizacion": "2025-11-25T09:13:09.976329009"
+  },
+  {
+    "id": "MP002",
+    "nombre": "Azúcar Blanca",
+    "precio": 18.75,
+    "stock": 80,
+    "categoria": {
+      "nombre": "Azúcares y Endulzantes",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.981413697"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP003",
+    "nombre": "Mantequilla",
+    "precio": 45.2,
+    "stock": 25,
+    "categoria": {
+      "nombre": "Lácteos",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.981553590"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP004",
+    "nombre": "Huevos",
+    "precio": 32.0,
+    "stock": 12,
+    "categoria": {
+      "nombre": "Huevos",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.981712886"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP005",
+    "nombre": "Aceite Vegetal",
+    "precio": 28.5,
+    "stock": 40,
+    "categoria": {
+      "nombre": "Grasas y Aceites",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.981841721"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP006",
+    "nombre": "Levadura Seca",
+    "precio": 15.8,
+    "stock": 8,
+    "categoria": {
+      "nombre": "Levaduras",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.981969100"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP007",
+    "nombre": "Almendras",
+    "precio": 120.0,
+    "stock": 15,
+    "categoria": {
+      "nombre": "Frutos Secos",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982139351"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP008",
+    "nombre": "Fresas",
+    "precio": 35.5,
+    "stock": 5,
+    "categoria": {
+      "nombre": "Frutas",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982363645"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP009",
+    "nombre": "Chocolate Amargo",
+    "precio": 65.25,
+    "stock": 20,
+    "categoria": {
+      "nombre": "Chocolates",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982500371"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP010",
+    "nombre": "Canela Molida",
+    "precio": 42.3,
+    "stock": 3,
+    "categoria": {
+      "nombre": "Especias",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982651067"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP011",
+    "nombre": "Leche Entera",
+    "precio": 22.0,
+    "stock": 30,
+    "categoria": {
+      "nombre": "Lácteos",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982786972"
+    },
+    "activo": false
+  },
+  {
+    "id": "MP012",
+    "nombre": "Nueces",
+    "precio": 95.5,
+    "stock": 10,
+    "categoria": {
+      "nombre": "Frutos Secos",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T09:13:09.982950461"
+    },
+    "activo": false
+  }
+]
