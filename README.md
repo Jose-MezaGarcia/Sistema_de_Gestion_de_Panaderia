@@ -1,8 +1,8 @@
-# 🥖 Dulce Tentación - Sistema de Gestión
+# Dulce Tentación - Sistema de Gestión
 
 Sistema completo de gestión para panadería con diseño personalizado en tonos amarillos/dorados.
 
-## ✨ Características Especiales
+## Características Especiales
 
 - **Diseño Personalizado**: Interfaz con tema "Dulce Tentación" en colores amarillos/dorados
 - **Login Elegante**: Pantalla de bienvenida con efectos visuales
@@ -10,12 +10,12 @@ Sistema completo de gestión para panadería con diseño personalizado en tonos 
 - **Arquitectura MVC + SOLID**: Código limpio y mantenible
 - **Persistencia JSON**: Datos guardados con Gson
 
-## 📋 Requisitos
+##  Requisitos
 
 - Java 17 o superior
 - Maven 3.6 o superior
 
-## 🚀 Instalación y Ejecución
+##  Instalación y Ejecución
 
 ```bash
 cd gestion-panaderia
@@ -23,12 +23,12 @@ mvn clean compile
 mvn javafx:run
 ```
 
-## 🔐 Credenciales
+## Credenciales
 
 - **Admin**: usuario: `admin` / contraseña: `admin123`
 - **Vendedor**: usuario: `vendedor` / contraseña: `vendedor123`
 
-## 🛍️ Productos Disponibles
+##  Productos Disponibles
 
 | Código | Producto | Precio |
 |--------|----------|--------|
@@ -39,7 +39,7 @@ mvn javafx:run
 | 005 | Pan Integral | $25.00 |
 | 006 | Cupcake de Fresa | $18.00 |
 
-## 💡 Cómo Usar
+##  Cómo Usar
 
 ### Realizar una Venta
 
@@ -55,7 +55,7 @@ mvn javafx:run
 - El sistema auto-completa el nombre y precio
 - Solo ingresa la cantidad y agrega
 
-## 🎨 Características del Diseño
+##  Características del Diseño
 
 ### Login
 - Panel izquierdo con gradiente dorado
@@ -70,7 +70,7 @@ mvn javafx:run
 - Total calculado automáticamente
 - Botones con gradientes llamativos
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 gestion-panaderia/
@@ -88,7 +88,7 @@ gestion-panaderia/
 └── ventas.json            # Registro de ventas
 ```
 
-## 🎯 Principios Aplicados
+##  Principios Aplicados
 
 ✅ **MVC** - Model View Controller
 ✅ **SOLID** - Principios de diseño
@@ -96,14 +96,14 @@ gestion-panaderia/
 ✅ **Repository Pattern** - Datos abstraídos
 ✅ **Generic Types** - Repositorio reutilizable
 
-## 🔧 Tecnologías
+## Tecnologías
 
 - **Java 17**
 - **JavaFX 17**
 - **Gson 2.10.1**
 - **Maven**
 
-## 📊 Flujo de la Aplicación
+## Flujo de la Aplicación
 
 ```
 Login (Dulce Tentación) 
@@ -115,7 +115,7 @@ Ventas (Sistema completo)
 JSON (Persistencia)
 ```
 
-## ⚡ Características Técnicas
+## Características Técnicas
 
 ### Controllers Adaptados
 - `LoginController`: Usa IDs de tu FXML (btnAceptar, btnCancelar, boxMensaje)
@@ -130,7 +130,7 @@ JSON (Persistencia)
 - `JsonRepository<T>`: Funciona con cualquier tipo
 - Métodos: cargar(), guardar(), findById(), eliminar()
 
-## 🎨 Personalización
+## Personalización
 
 Los colores del tema son:
 - **Primario**: #FFB347 (Naranja claro)
@@ -138,14 +138,14 @@ Los colores del tema son:
 - **Acento**: #FF8C00 (Naranja oscuro)
 - **Fondo**: #FFFACD (Amarillo crema)
 
-## 📝 Notas Importantes
+## Notas Importantes
 
-1. ⚠️ Los archivos JSON deben estar en la raíz del proyecto
-2. 📦 El stock se actualiza automáticamente al vender
-3. 🔍 Búsqueda por código con auto-completado
-4. 💾 Todas las ventas se guardan con fecha y hora
-5. ✨ Diseño totalmente personalizado incluido
+1.  Los archivos JSON deben estar en la raíz del proyecto
+2.  El stock se actualiza automáticamente al vender
+3.  Búsqueda por código con auto-completado
+4.  Todas las ventas se guardan con fecha y hora
+5.  Diseño totalmente personalizado incluido
 
 ---
 
-**Desarrollado con ❤️ para Dulce Tentación**
+**Desarrollado con el corazon para Dulce Tentación**
