@@ -10,20 +10,29 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que maneja un repositorio en archivo JSON
+ * Aquí se guardan y cargan objetos usando Gson
+ * @param <T> tipo de objeto que se maneja en el repositorio
+ */
 public class JsonRepository<T> implements IRepository<T> {
-    
+
     private String rutaArchivo;
     private Class<T> tipo;
     private Gson gson;
-    
+
+    /**
+     * Se crea un repositorio JSON con la ruta y el tipo de objeto
+     * Si el archivo no existe, se crea vacío
+     */
     public JsonRepository(String rutaArchivo, Class<T> tipo) {
         this.rutaArchivo = rutaArchivo;
         this.tipo = tipo;
         this.gson = new GsonBuilder()
-            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
-            .setPrettyPrinting()
-            .create();
-        
+                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                .setPrettyPrinting()
+                .create();
+
         File file = new File(rutaArchivo);
         if (!file.exists()) {
             try {
@@ -34,7 +43,11 @@ public class JsonRepository<T> implements IRepository<T> {
             }
         }
     }
-    
+
+    /**
+     * Se cargan los datos desde el archivo JSON
+     * Si no hay datos, se devuelve una lista vacía
+     */
     @Override
     public List<T> cargar() {
         try (Reader reader = new FileReader(rutaArchivo)) {
@@ -45,6 +58,60 @@ public class JsonRepository<T> implements IRepository<T> {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    /**
+     * Se busca un objeto por su id
+     */
+    @Override
+    public T findById(String id) {
+        List<T> lista = cargar();
+        for (T item : lista) {
+            try {
+                java.lang.reflect.Method metodoGetId = item.getClass().getMethod("getId");
+                String itemId = (String) metodoGetId.invoke(item);
+                if (itemId.equals(id)) {
+                    return item;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Se guardan los datos en el archivo JSON
+     */
+    @Override
+    public void guardar(List<T> lista) {
+        try (Writer writer = new FileWriter(rutaArchivo)) {
+            gson.toJson(lista, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Se elimina un objeto por su id
+     */
+    @Override
+    public void eliminar(String id) {
+        List<T> lista = cargar();
+        lista.removeIf(item -> {
+            try {
+                java.lang.reflect.Method metodoGetId = item.getClass().getMethod("getId");
+                String itemId = (String) metodoGetId.invoke(item);
+                return itemId.equals(id);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        });
+        guardar(lista);
+    }
+}
+
     }
     
     @Override

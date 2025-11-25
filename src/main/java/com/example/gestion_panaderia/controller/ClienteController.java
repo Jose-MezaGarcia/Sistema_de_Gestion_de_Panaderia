@@ -8,6 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * Controlador de clientes
+ * Aquí se maneja la vista de clientes, su tabla y las acciones del formulario
+ */
 public class ClienteController implements IController {
 
     // Referencias FXML
@@ -46,11 +50,18 @@ public class ClienteController implements IController {
     private ObservableList<Cliente> clientesList;
     private Cliente clienteSeleccionado;
 
+    /**
+     * Se inicializa el controlador al cargar la vista
+     */
     @FXML
     public void initialize() {
         inicializar();
     }
 
+    /**
+     * Se inicializan los componentes principales
+     * Aquí se prepara la tabla, los eventos y se cargan los clientes
+     */
     @Override
     public void inicializar() {
         inicializarTabla();
@@ -59,6 +70,10 @@ public class ClienteController implements IController {
         cargarClientes();
     }
 
+    /**
+     * Se configura la tabla de clientes
+     * Se definen las columnas y se personaliza la celda de calificación
+     */
     private void inicializarTabla() {
         // Configurar columnas de la tabla
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -92,10 +107,17 @@ public class ClienteController implements IController {
             }
         });
 
+        /**
+         * Se inicializa la lista de clientes y se conecta con la tabla
+         */
         clientesList = FXCollections.observableArrayList();
         clientesTable.setItems(clientesList);
     }
 
+    /**
+     * Se configuran los eventos de la tabla
+     * Aquí se detecta cuando se selecciona un cliente
+     */
     private void configurarEventos() {
         // Evento para seleccionar cliente de la tabla
         clientesTable.getSelectionModel().selectedItemProperty().addListener(
@@ -103,6 +125,9 @@ public class ClienteController implements IController {
         );
     }
 
+    /**
+     * Se cargan clientes de ejemplo para pruebas
+     */
     private void cargarClientes() {
         // Datos de ejemplo para pruebas
         clientesList.addAll(
@@ -112,6 +137,9 @@ public class ClienteController implements IController {
         );
     }
 
+    /**
+     * Se crea un cliente de ejemplo con datos básicos y calificación
+     */
     private Cliente crearClienteEjemplo(String id, String nombre, String telefono, String email, Cliente.CalificacionCliente calificacion) {
         Cliente cliente = new Cliente(id, nombre, email, "", telefono, "");
         cliente.setPreferencias("Cliente frecuente");
@@ -119,6 +147,10 @@ public class ClienteController implements IController {
         return cliente;
     }
 
+    /**
+     * Se selecciona un cliente de la tabla
+     * Se llenan los campos del formulario y se actualiza la calificación
+     */
     private void seleccionarCliente(Cliente cliente) {
         this.clienteSeleccionado = cliente;
 
@@ -141,21 +173,34 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se asigna calificación FELIZ al cliente seleccionado
+     */
     @FXML
     private void asignarFeliz() {
         asignarCalificacion(Cliente.CalificacionCliente.FELIZ);
     }
 
+    /**
+     * Se asigna calificación NEUTRAL al cliente seleccionado
+     */
     @FXML
     private void asignarNeutral() {
         asignarCalificacion(Cliente.CalificacionCliente.NEUTRAL);
     }
 
+    /**
+     * Se asigna calificación TRISTE al cliente seleccionado
+     */
     @FXML
     private void asignarTriste() {
         asignarCalificacion(Cliente.CalificacionCliente.TRISTE);
     }
 
+    /**
+     * Se asigna la calificación al cliente seleccionado
+     * Se actualiza la tabla y se guarda en el servicio si está disponible
+     */
     private void asignarCalificacion(Cliente.CalificacionCliente calificacion) {
         if (clienteSeleccionado != null) {
             clienteSeleccionado.setCalificacion(calificacion);
@@ -178,6 +223,10 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se cambia el color del label según la calificación
+     * Si no hay calificación se muestra "Sin calificar"
+     */
     private void actualizarCalificacionLabel(Cliente.CalificacionCliente calificacion) {
         if (calificacion != null) {
             String texto = calificacion.getEmoji() + " - " + (int)(calificacion.getDescuento() * 100) + "% descuento";
@@ -201,6 +250,10 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se agrega un cliente nuevo desde el formulario
+     * Se guarda en la lista y en el servicio si está disponible
+     */
     @FXML
     private void agregarCliente() {
         if (validarFormulario()) {
@@ -227,6 +280,10 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se guarda la información del cliente seleccionado
+     * Se actualiza en la tabla y en el servicio
+     */
     @FXML
     private void guardarCliente() {
         if (clienteSeleccionado != null && validarFormulario()) {
@@ -247,6 +304,10 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se elimina el cliente seleccionado
+     * Se quita de la lista y del servicio
+     */
     @FXML
     private void eliminarCliente() {
         if (clienteSeleccionado != null) {
@@ -263,6 +324,9 @@ public class ClienteController implements IController {
         }
     }
 
+    /**
+     * Se limpia el formulario y se reinicia la selección
+     */
     @FXML
     private void limpiarFormulario() {
         txtId.clear();
@@ -276,6 +340,10 @@ public class ClienteController implements IController {
         clientesTable.getSelectionModel().clearSelection();
     }
 
+    /**
+     * Se valida el formulario antes de guardar o agregar
+     * Se revisa que ID y nombre no estén vacíos y que el ID no exista
+     */
     private boolean validarFormulario() {
         if (txtId.getText().isEmpty() || txtNombre.getText().isEmpty()) {
             mostrarAlerta("ID y Nombre son campos obligatorios");
@@ -297,6 +365,9 @@ public class ClienteController implements IController {
         return true;
     }
 
+    /**
+     * Se muestra un mensaje informativo en pantalla
+     */
     private void mostrarMensaje(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
@@ -305,6 +376,9 @@ public class ClienteController implements IController {
         alert.showAndWait();
     }
 
+    /**
+     * Se muestra una alerta de advertencia en pantalla
+     */
     private void mostrarAlerta(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Advertencia");
@@ -313,48 +387,75 @@ public class ClienteController implements IController {
         alert.showAndWait();
     }
 
+    /**
+     * Se muestra el usuario actual en la vista
+     */
     private void usuarioActual() {
         if (usuarioActual != null) {
             usuarioActual.setText("Administrador");
         }
     }
 
+    /**
+     * Se abre la ventana de ventas
+     */
     // Métodos para cambiar entre ventanas
     @FXML
     private void abrirVentas(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/ventas/ventas.fxml", "Dulce Tentación - Ventas");
     }
 
+    /**
+     * Se abre la ventana de pedidos
+     */
     @FXML
     private void abrirPedidos(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/pedidos/pedidos.fxml", "Dulce Tentación - Pedidos");
     }
 
+    /**
+     * Se abre la ventana de productos
+     */
     @FXML
     private void abrirProductos(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/productos/productos.fxml", "Dulce Tentación - Productos");
     }
 
+    /**
+     * Se abre la ventana de inventario
+     */
     @FXML
     private void abrirInventario(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/inventario/inventario.fxml", "Dulce Tentación - Inventario");
     }
 
+    /**
+     * Se abre la ventana de clientes
+     */
     @FXML
     private void abrirClientes(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/clientes/clientes.fxml", "Dulce Tentación - Clientes");
     }
 
+    /**
+     * Se abre la ventana de recibos
+     */
     @FXML
     private void abrirRecibos(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/recibos/recibos.fxml", "Dulce Tentación - Recibos");
     }
 
+    /**
+     * Se abre la ventana de reportes
+     */
     @FXML
     private void abrirReportes(javafx.event.ActionEvent event) {
         cambiarVentana(event, "/fxml/reportes/reportes.fxml", "Dulce Tentación - Reportes");
     }
 
+    /**
+     * Se cambia de ventana según la ruta y el título
+     */
     private void cambiarVentana(javafx.event.ActionEvent event, String rutaFXML, String titulo) {
         try {
             javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource(rutaFXML));
@@ -369,7 +470,9 @@ public class ClienteController implements IController {
         }
     }
 
-    // Setter para inyección de dependencias
+    /**
+     * Se inyecta el servicio de clientes
+     */
     public void setClienteService(IClienteService clienteService) {
         this.clienteService = clienteService;
     }

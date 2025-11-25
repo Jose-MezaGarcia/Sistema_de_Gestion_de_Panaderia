@@ -5,21 +5,33 @@ import java.time.LocalTime;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Clase que representa un pedido
+ * Aquí se guardan los datos básicos del pedido, cliente, fechas y estado
+ */
 public class Pedido {
     private String id;
     private String titulo;
     private String cliente;
-    private String fechaEntrega; // Guardar como String para JSON
-    private String horaEntrega;  // Guardar como String para JSON
+    private String fechaEntrega; // Se guarda como String para JSON
+    private String horaEntrega;  // Se guarda como String para JSON
     private String descripcion;
     private String estado;
     private String telefono;
-    private String fechaCreacion; // Guardar como String para JSON
+    private String fechaCreacion; // Se guarda como String para JSON
 
+    /**
+     * Se crea un pedido vacío
+     * Se asigna la fecha de creación automáticamente
+     */
     public Pedido() {
         this.fechaCreacion = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
     }
 
+    /**
+     * Se crea un pedido con datos básicos
+     * La fecha de creación se asigna automáticamente
+     */
     public Pedido(String id, String titulo, String cliente, String fechaEntrega,
                   String horaEntrega, String descripcion, String estado, String telefono) {
         this();
@@ -33,35 +45,51 @@ public class Pedido {
         this.telefono = telefono;
     }
 
-    // Getters y Setters básicos
+    // ==================== GETTERS Y SETTERS ====================
+
+    /** Se obtiene el id del pedido */
     public String getId() { return id; }
+    /** Se cambia el id del pedido */
     public void setId(String id) { this.id = id; }
 
+    /** Se obtiene el título del pedido */
     public String getTitulo() { return titulo; }
+    /** Se cambia el título del pedido */
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
+    /** Se obtiene el cliente del pedido */
     public String getCliente() { return cliente; }
+    /** Se cambia el cliente del pedido */
     public void setCliente(String cliente) { this.cliente = cliente; }
 
+    /** Se obtiene la descripción del pedido */
     public String getDescripcion() { return descripcion; }
+    /** Se cambia la descripción del pedido */
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
+    /** Se obtiene el estado del pedido */
     public String getEstado() { return estado; }
+    /** Se cambia el estado del pedido */
     public void setEstado(String estado) { this.estado = estado; }
 
+    /** Se obtiene el teléfono del cliente */
     public String getTelefono() { return telefono; }
+    /** Se cambia el teléfono del cliente */
     public void setTelefono(String telefono) { this.telefono = telefono; }
 
+    /** Se obtiene la fecha de creación como String */
     public String getFechaCreacion() { return fechaCreacion; }
+    /** Se cambia la fecha de creación como String */
     public void setFechaCreacion(String fechaCreacion) { this.fechaCreacion = fechaCreacion; }
 
     // ==================== MÉTODOS PARA FECHAS/HORAS ====================
 
-    // Fecha entrega como String (para JSON)
+    /** Se obtiene la fecha de entrega como String (para JSON) */
     public String getFechaEntrega() { return fechaEntrega; }
+    /** Se cambia la fecha de entrega como String */
     public void setFechaEntrega(String fechaEntrega) { this.fechaEntrega = fechaEntrega; }
 
-    // Fecha entrega como LocalDate (para UI)
+    /** Se obtiene la fecha de entrega como LocalDate (para UI) */
     public LocalDate getFechaEntregaAsLocalDate() {
         if (fechaEntrega != null && !fechaEntrega.isEmpty()) {
             try {
@@ -74,15 +102,17 @@ public class Pedido {
         return null;
     }
 
+    /** Se cambia la fecha de entrega desde un LocalDate */
     public void setFechaEntregaFromLocalDate(LocalDate fecha) {
         this.fechaEntrega = fecha != null ? fecha.toString() : null;
     }
 
-    // Hora entrega como String (para JSON)
+    /** Se obtiene la hora de entrega como String (para JSON) */
     public String getHoraEntrega() { return horaEntrega; }
+    /** Se cambia la hora de entrega como String */
     public void setHoraEntrega(String horaEntrega) { this.horaEntrega = horaEntrega; }
 
-    // Hora entrega como LocalTime (para UI)
+    /** Se obtiene la hora de entrega como LocalTime (para UI) */
     public LocalTime getHoraEntregaAsLocalTime() {
         if (horaEntrega != null && !horaEntrega.isEmpty()) {
             try {
@@ -95,11 +125,12 @@ public class Pedido {
         return null;
     }
 
+    /** Se cambia la hora de entrega desde un LocalTime */
     public void setHoraEntregaFromLocalTime(LocalTime hora) {
         this.horaEntrega = hora != null ? hora.toString() : null;
     }
 
-    // Fecha creación como LocalDateTime (para UI)
+    /** Se obtiene la fecha de creación como LocalDateTime (para UI) */
     public LocalDateTime getFechaCreacionAsLocalDateTime() {
         if (fechaCreacion != null && !fechaCreacion.isEmpty()) {
             try {

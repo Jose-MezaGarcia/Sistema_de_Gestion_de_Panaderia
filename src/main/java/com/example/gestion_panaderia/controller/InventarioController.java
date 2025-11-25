@@ -74,11 +74,18 @@ public class InventarioController implements IController {
 
     // ==================== MÉTODOS DE INICIALIZACIÓN ====================
 
+    /**
+     * Se inicializa el controlador al cargar la vista
+     */
     @FXML
     public void initialize() {
         inicializar();
     }
 
+    /**
+     * Se inicializan los servicios, datos y listas filtradas
+     * Aquí se prepara el repositorio y la colección observable
+     */
     @Override
     public void inicializar() {
         // Inicializar servicios con inyección de dependencias
@@ -102,6 +109,10 @@ public class InventarioController implements IController {
         usuarioActual.setText("Administrador");
     }
 
+    /**
+     * Se configuran los controles de la vista
+     * Aquí se llenan los ComboBox de categorías y estado de stock
+     */
     private void configurarControles() {
         // Configurar ComboBox de categorías para materias primas
         List<String> categoriasMateriasPrimas = List.of(
@@ -129,6 +140,10 @@ public class InventarioController implements IController {
         cmbEstadoStock.setValue("Todos");
     }
 
+    /**
+     * Se configura la tabla de inventario
+     * Se definen las columnas y se aplica estilo según estado de stock
+     */
     private void configurarTabla() {
         colCodigoInv.setCellValueFactory(new PropertyValueFactory<>("id"));
         colProductoInv.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -175,6 +190,10 @@ public class InventarioController implements IController {
         });
     }
 
+    /**
+     * Se configuran los eventos de la vista
+     * Aquí se definen las acciones de búsqueda y de inventario
+     */
     private void configurarEventos() {
         // Búsqueda y filtros
         btnBuscarInventario.setOnAction(event -> buscarInventario());
@@ -191,6 +210,10 @@ public class InventarioController implements IController {
         btnExportarInventario.setOnAction(event -> exportarInventario());
     }
 
+    /**
+     * Se configuran los botones de navegación
+     * Aquí se definen las acciones para abrir cada ventana
+     */
     private void configurarNavegacion() {
         btnVentas.setOnAction(event -> abrirVentas());
         btnPedidos.setOnAction(event -> abrirPedidos());
@@ -203,6 +226,10 @@ public class InventarioController implements IController {
 
     // ==================== MÉTODOS DE NEGOCIO ====================
 
+    /**
+     * Se busca en el inventario según texto, categoría y estado seleccionados
+     * Se filtra la lista observable con los criterios
+     */
     @FXML
     private void buscarInventario() {
         String textoBusqueda = txtBuscarInventario.getText().toLowerCase();
@@ -224,6 +251,12 @@ public class InventarioController implements IController {
         });
     }
 
+    /**
+     * Se muestra un diálogo para agregar una nueva materia prima
+     * Se construye un formulario con código, nombre, precio, stock y categoría
+     * Se valida la entrada y se crea un producto si todo está correcto
+     * Se guarda en el servicio y se actualiza el inventario
+     */
     private void mostrarDialogoAgregarProducto() {
         Dialog<Producto> dialog = new Dialog<>();
         dialog.setTitle("Agregar Materia Prima");
@@ -317,6 +350,12 @@ public class InventarioController implements IController {
         });
     }
 
+    /**
+     * Se muestra un diálogo para editar una materia prima seleccionada
+     * Se cargan los datos actuales en el formulario
+     * Se valida la entrada y se actualiza el producto si todo está correcto
+     * Se guarda en el servicio y se refresca la tabla
+     */
     private void mostrarDialogoEditarProducto() {
         Producto productoSeleccionado = tableInventario.getSelectionModel().getSelectedItem();
         if (productoSeleccionado == null) {
@@ -405,7 +444,7 @@ public class InventarioController implements IController {
                 }
             }
             return null;
-        });
+        });// aqui llegue x2
 
         Optional<Producto> result = dialog.showAndWait();
         result.ifPresent(producto -> {
@@ -416,6 +455,11 @@ public class InventarioController implements IController {
         });
     }
 
+    /**
+     * Se actualiza el stock de la materia prima seleccionada
+     * Se pide el nuevo valor y se valida que no sea negativo
+     * Se guarda en el servicio y se refresca la tabla
+     */
     @FXML
     private void actualizarStock() {
         Producto productoSeleccionado = tableInventario.getSelectionModel().getSelectedItem();
@@ -448,6 +492,11 @@ public class InventarioController implements IController {
         });
     }
 
+    /**
+     * Se elimina la materia prima seleccionada
+     * Se pide confirmación antes de quitarla de la lista
+     * Se actualizan las estadísticas después de eliminar
+     */
     @FXML
     private void eliminarProducto() {
         Producto productoSeleccionado = tableInventario.getSelectionModel().getSelectedItem();
@@ -469,6 +518,10 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se exporta el inventario
+     * Por ahora solo muestra un mensaje informativo
+     */
     @FXML
     private void exportarInventario() {
         mostrarAlerta("Información", "Funcionalidad de exportación a Excel en desarrollo",
@@ -477,6 +530,10 @@ public class InventarioController implements IController {
 
     // ==================== MÉTODOS AUXILIARES ====================
 
+    /**
+     * Se cargan los productos desde el servicio
+     * Se llenan los datos en la lista observable
+     */
     private void cargarInventario() {
         try {
             List<Producto> productos = productoService.listarProductos();
@@ -487,6 +544,10 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se actualizan las estadísticas de stock
+     * Se cuentan productos óptimos, bajos, sin stock y el total
+     */
     private void actualizarEstadisticas() {
         long stockOptimo = inventarioData.stream()
                 .filter(p -> p.getStock() > STOCK_BAJO_LIMITE)
@@ -505,6 +566,11 @@ public class InventarioController implements IController {
         lblTotalProductos.setText(String.valueOf(totalProductos));
     }
 
+
+    /**
+     * Se determina el estado del stock según el número
+     * Devuelve Óptimo, Bajo o Sin Stock
+     */
     private String determinarEstadoStock(int stock) {
         if (stock == 0) {
             return "Sin Stock";
@@ -515,6 +581,10 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se muestra una alerta en pantalla
+     * Se usa para errores, información o confirmaciones
+     */
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
@@ -525,6 +595,10 @@ public class InventarioController implements IController {
 
     // ==================== MÉTODOS DE NAVEGACIÓN ====================
 
+
+    /**
+     * Se abre la ventana de ventas
+     */
     @FXML
     private void abrirVentas() {
         try {
@@ -534,6 +608,9 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se abre la ventana de pedidos
+     */
     @FXML
     private void abrirPedidos() {
         try {
@@ -543,6 +620,9 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se abre la ventana de productos
+     */
     @FXML
     private void abrirProductos() {
         try {
@@ -552,11 +632,19 @@ public class InventarioController implements IController {
         }
     }
 
+
+    /**
+     * Se abre la ventana de inventario
+     * Aquí no hace nada porque ya estamos en inventario
+     */
     @FXML
     private void abrirInventario() {
         // Ya estamos en inventario
     }
 
+    /**
+     * Se abre la ventana de clientes
+     */
     @FXML
     private void abrirClientes() {
         try {
@@ -566,6 +654,9 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se abre la ventana de recibos
+     */
     @FXML
     private void abrirRecibos() {
         try {
@@ -575,6 +666,9 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se abre la ventana de reportes
+     */
     @FXML
     private void abrirReportes() {
         try {
@@ -584,9 +678,15 @@ public class InventarioController implements IController {
         }
     }
 
+    /**
+     * Se deja preparado el método para agregar producto desde acción
+     */
     public void agregarProducto(ActionEvent actionEvent) {
     }
 
+    /**
+     * Se deja preparado el método para editar inventario desde acción
+     */
     public void editarInventario(ActionEvent actionEvent) {
     }
 }
