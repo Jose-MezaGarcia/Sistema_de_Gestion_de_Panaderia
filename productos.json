@@ -1,39 +1,51 @@
 [
   {
-    "id": "001",
+    "id": "P001",
     "nombre": "Concha de Vainilla",
     "precio": 10.0,
-    "stock": 31,
+    "stock": 26,
     "categoria": {
-      "nombre": "Pan Dulce"
-    }
+      "nombre": "Pan Dulce",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.316261516"
+    },
+    "activo": false
   },
   {
-    "id": "002",
+    "id": "P002",
     "nombre": "Croissant",
     "precio": 15.0,
     "stock": 11,
     "categoria": {
-      "nombre": "Panadería Francesa"
-    }
+      "nombre": "Panadería Francesa",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.316477182"
+    },
+    "activo": false
   },
   {
-    "id": "003",
+    "id": "PAS001",
     "nombre": "Pastel de Chocolate",
     "precio": 250.0,
-    "stock": 10,
+    "stock": 8,
     "categoria": {
-      "nombre": "Pastelería"
-    }
+      "nombre": "Pastelería",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.316692559"
+    },
+    "activo": false
   },
   {
-    "id": "004",
+    "id": "P003",
     "nombre": "Dona Glaseada",
     "precio": 12.0,
     "stock": 40,
     "categoria": {
-      "nombre": "Repostería"
-    }
+      "nombre": "Repostería",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.316869519"
+    },
+    "activo": false
   },
   {
     "id": "005",
@@ -41,8 +53,11 @@
     "precio": 25.0,
     "stock": 25,
     "categoria": {
-      "nombre": "Panadería Saludable"
-    }
+      "nombre": "Panadería Saludable",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.317043807"
+    },
+    "activo": false
   },
   {
     "id": "006",
@@ -50,7 +65,25 @@
     "precio": 18.0,
     "stock": 35,
     "categoria": {
-      "nombre": "Cupcakes"
-    }
+      "nombre": "Cupcakes",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:29:26.317214647"
+    },
+    "activo": false
+  },
+  {
+    "id": "P005",
+    "codigo": "ROLCAN",
+    "nombre": "Rol de Canela",
+    "precio": 5.0,
+    "stock": 30,
+    "categoria": {
+      "id": "CAT_FD15FE87",
+      "nombre": "PANES",
+      "activa": true,
+      "fechaCreacion": "2025-11-25T01:28:18.235717859"
+    },
+    "activo": true,
+    "fechaCreacion": "2025-11-25T01:29:26.315316110"
   }
 ]

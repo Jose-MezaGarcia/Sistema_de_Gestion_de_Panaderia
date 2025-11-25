@@ -1,3 +1,265 @@
 [
-
+  {
+    "id": "V-a4926c44",
+    "fecha": "2025-11-24T16:41:46.033641139",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 31,
+          "categoria": {
+            "nombre": "Pan Dulce",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T02:08:50.755509184"
+          },
+          "activo": false
+        },
+        "cantidad": 3,
+        "subtotal": 30.0
+      }
+    ],
+    "subtotal": 0.0,
+    "descuento": 0.0,
+    "total": 30.0
+  },
+  {
+    "id": "V-8a3580d2",
+    "fecha": "2025-11-24T16:42:05.529997786",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 28,
+          "categoria": {
+            "nombre": "Pan Dulce",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T02:08:50.757208032"
+          },
+          "activo": false
+        },
+        "cantidad": 2,
+        "subtotal": 20.0
+      },
+      {
+        "producto": {
+          "id": "003",
+          "nombre": "Pastel de Chocolate",
+          "precio": 250.0,
+          "stock": 10,
+          "categoria": {
+            "nombre": "Pastelería",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T02:08:50.757728119"
+          },
+          "activo": false
+        },
+        "cantidad": 2,
+        "subtotal": 500.0
+      }
+    ],
+    "subtotal": 0.0,
+    "descuento": 0.0,
+    "total": 520.0
+  },
+  {
+    "id": "V-d053576b",
+    "fecha": "2025-11-25T02:08:50.740464796",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "cliente": {
+      "telefono": "9861000000",
+      "direccion": "",
+      "preferencias": "cafe con concha",
+      "calificacion": "FELIZ",
+      "id": "C004",
+      "nombre": "Juan gutierres",
+      "usuario": "juan@gmail.com",
+      "password": ""
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "P001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 26,
+          "categoria": {
+            "nombre": "Pan Dulce",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:29:26.316261516"
+          },
+          "activo": false
+        },
+        "cantidad": 6,
+        "subtotal": 60.0
+      },
+      {
+        "producto": {
+          "id": "PAS001",
+          "nombre": "Pastel de Chocolate",
+          "precio": 250.0,
+          "stock": 8,
+          "categoria": {
+            "nombre": "Pastelería",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:29:26.316692559"
+          },
+          "activo": false
+        },
+        "cantidad": 2,
+        "subtotal": 500.0
+      }
+    ],
+    "subtotal": 560.0,
+    "descuento": 56.0,
+    "total": 504.0
+  },
+  {
+    "id": "V-6de5cd27",
+    "fecha": "2025-11-25T02:14:04.019269367",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "cliente": {
+      "telefono": "555-1234",
+      "direccion": "",
+      "preferencias": "Cliente frecuente, prefiere pan dulce",
+      "calificacion": "FELIZ",
+      "id": "C001",
+      "nombre": "María González",
+      "usuario": "maria@email.com",
+      "password": ""
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "PAS001",
+          "nombre": "Pastel de Chocolate",
+          "precio": 250.0,
+          "stock": 8,
+          "categoria": {
+            "nombre": "Pastelería",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:29:26.316692559"
+          },
+          "activo": false
+        },
+        "cantidad": 1,
+        "subtotal": 250.0
+      }
+    ],
+    "subtotal": 250.0,
+    "descuento": 25.0,
+    "total": 225.0
+  },
+  {
+    "id": "V-4b66b276",
+    "fecha": "2025-11-25T02:15:05.9864141",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "P002",
+          "nombre": "Croissant",
+          "precio": 15.0,
+          "stock": 11,
+          "categoria": {
+            "nombre": "Panadería Francesa",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:29:26.316477182"
+          },
+          "activo": false
+        },
+        "cantidad": 1,
+        "subtotal": 15.0
+      }
+    ],
+    "subtotal": 15.0,
+    "descuento": 0.0,
+    "total": 15.0
+  },
+  {
+    "id": "V-14c55d61",
+    "fecha": "2025-11-25T07:31:34.539116352",
+    "vendedor": {
+      "rol": "Vendedor",
+      "id": "1",
+      "nombre": "Vendedor",
+      "usuario": "vendedor",
+      "password": "123"
+    },
+    "detalles": [
+      {
+        "producto": {
+          "id": "P005",
+          "codigo": "ROLCAN",
+          "nombre": "Rol de Canela",
+          "precio": 5.0,
+          "stock": 30,
+          "categoria": {
+            "id": "CAT_FD15FE87",
+            "nombre": "PANES",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:28:18.235717859"
+          },
+          "activo": true,
+          "fechaCreacion": "2025-11-25T01:29:26.315316110"
+        },
+        "cantidad": 7,
+        "subtotal": 35.0
+      },
+      {
+        "producto": {
+          "id": "P001",
+          "nombre": "Concha de Vainilla",
+          "precio": 10.0,
+          "stock": 26,
+          "categoria": {
+            "nombre": "Pan Dulce",
+            "activa": true,
+            "fechaCreacion": "2025-11-25T01:29:26.316261516"
+          },
+          "activo": false
+        },
+        "cantidad": 7,
+        "subtotal": 70.0
+      }
+    ],
+    "subtotal": 105.0,
+    "descuento": 0.0,
+    "total": 105.0
+  }
 ]

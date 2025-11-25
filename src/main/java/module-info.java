@@ -12,4 +12,6 @@ module com.example.gestion_panaderia {
     exports com.example.gestion_panaderia;
     exports com.example.gestion_panaderia.controller;
     exports com.example.gestion_panaderia.model;
+    exports com.example.gestion_panaderia.service;
+    opens com.example.gestion_panaderia.service to com.google.gson;
 }
