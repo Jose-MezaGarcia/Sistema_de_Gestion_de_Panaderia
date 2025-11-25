@@ -1,9 +1,9 @@
 # Requerimientos
 # Requerimientos Funcionales - Sistema de Gestión de Panadería
 
+---
 
-
-# RF-01: Gestión de Productos
+## RF-01: Gestión de Productos
 
 **RF-01.1 - Mantenimiento de Catálogo de Productos**
 - El sistema permitirá crear, modificar, consultar y eliminar productos del catálogo de panadería, incluyendo panes artesanales, pasteles, galletas y productos horneados especializados.
@@ -12,9 +12,9 @@
 **RF-01.2 - Clasificación de Productos**
 - El sistema permitirá categorizar productos según su tipo: pan, pastel, galleta y otros productos horneados.
 
+---
 
-
-# RF-02: Toma de Pedidos
+## RF-02: Toma de Pedidos
 
 **RF-02.1 - Registro de Pedidos**
 - El sistema permitirá registrar pedidos de clientes mediante la selección de productos del catálogo y la especificación de las cantidades requeridas.
@@ -23,8 +23,9 @@
 **RF-02.2 - Cálculo Automático de Total**
 - El sistema calculará automáticamente el precio total del pedido mediante la sumatoria de los subtotales de cada producto (precio unitario × cantidad).
 
+---
 
-# RF-03: Inventario y Control de Stock
+## RF-03: Inventario y Control de Stock
 
 **RF-03.1 - Gestión de Inventario**
 - El sistema permitirá registrar y actualizar las existencias de productos terminados disponibles en el establecimiento.
@@ -37,8 +38,9 @@
 **RF-03.3 - Alertas de Inventario Bajo**
 - El sistema generará alertas automáticas cuando los niveles de inventario de un producto alcancen o desciendan del punto de reorden previamente configurado.
 
+---
 
-# RF-04: Registro de Ventas
+## RF-04: Registro de Ventas
 
 **RF-04.1 - Historial de Ventas**
 - El sistema mantendrá un registro completo y detallado de todas las ventas realizadas, incluyendo: fecha y hora de la transacción, productos vendidos, cantidades comercializadas, precios aplicados y cliente asociado a la venta.
@@ -46,8 +48,9 @@
 **RF-04.2 - Consulta de Ventas Anteriores**
 - El sistema permitirá buscar y consultar ventas anteriores mediante filtros configurables por fecha, cliente o producto específico.
 
+---
 
-#RF-05: Gestión de Clientes
+## RF-05: Gestión de Clientes
 
 **RF-05.1 - Registro de Clientes**
 - El sistema permitirá crear, modificar, consultar y eliminar registros de clientes habituales del establecimiento.
@@ -57,6 +60,7 @@
 - El sistema permitirá administrar programas de lealtad y esquemas de descuentos especiales para clientes frecuentes.
 - El sistema registrará los puntos acumulados por cliente y los descuentos aplicables según el programa de fidelización.
 
+---
 
 ## RF-06: Generación de Facturas o Recibos
 
@@ -66,6 +70,7 @@
 **RF-06.2 - Contenido del Recibo**
 - Cada recibo incluirá de manera estructurada: número de folio consecutivo, fecha y hora de emisión, datos fiscales del negocio, detalle de productos vendidos con sus cantidades y precios unitarios, subtotal de la operación, descuentos aplicados (cuando corresponda), importe total y datos del cliente (si aplica).
 
+---
 
 ## RF-07: Descuentos y Promociones
 
@@ -76,8 +81,9 @@
 **RF-07.2 - Cálculo Automático de Descuentos**
 - El sistema calculará automáticamente los descuentos aplicables según las reglas de negocio configuradas y los aplicará al total de la venta de forma inmediata.
 
+---
 
-# RF-08: Reportes de Ventas y Finanzas
+## RF-08: Reportes de Ventas y Finanzas
 
 **RF-08.1 - Reportes Periódicos de Ventas**
 - El sistema generará informes de ventas con periodicidad configurable: diaria, semanal, mensual y anual.
@@ -87,8 +93,9 @@
 - El sistema proporcionará informes de análisis detallado de ventas por producto, categoría y período de tiempo seleccionado.
 - Los reportes incluirán representaciones gráficas y estadísticas comparativas para facilitar la toma de decisiones.
 
+---
 
-# RF-09: Búsqueda y Consulta de Productos
+## RF-09: Búsqueda y Consulta de Productos
 
 **RF-09.1 - Búsqueda Rápida**
 - El sistema permitirá buscar productos mediante filtros configurables: nombre del producto, número de artículo y categoría.
@@ -97,7 +104,9 @@
 **RF-09.2 - Información Detallada de Productos**
 - El sistema mostrará información completa y detallada de cada producto: precio vigente, existencias actuales en inventario, descripción del producto y especificaciones técnicas relevantes.
 
-# Requerimientos No Funcionales
+---
+
+## Requerimientos No Funcionales
 
 **RNF-01: Usabilidad**
 - El sistema contará con una interfaz gráfica de usuario intuitiva, amigable y de fácil navegación, desarrollada con tecnología **JavaFX**.
@@ -106,4 +115,4 @@
 
 **RNF-02: Tecnología**
 - El sistema será desarrollado utilizando **Java** como lenguaje de programación principal, aprovechando sus capacidades de programación orientada a objetos y portabilidad multiplataforma.
-- La interfaz gráfica de usuario se implementará con el framework **JavaFX** para proporcionar una experiencia visual moderna, consistente y de alto rendimiento.
+- La interfaz gráfica de usuario se implementará con el framework **JavaFX** para proporcionar una experiencia visual moderna, consistente y de alto rendimiento.ramework **JavaFX** para proporcionar una experiencia visual moderna, consistente y de alto rendimiento.
