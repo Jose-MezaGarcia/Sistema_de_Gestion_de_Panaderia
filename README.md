@@ -196,16 +196,16 @@ mvn javafx:run
 gestion-panaderia/
 ├── src/main/
 │   ├── java/com/example/gestion_panaderia/
-│   │   ├── controller/          # LoginController, VentaController
-│   │   ├── model/               # Usuario, Producto, Venta, etc.
-│   │   ├── service/             # AuthService, ProductoService, VentaService
-│   │   └── repository/          # JsonRepository genérico
+│   │   ├── controller/    # LoginController, VentaController
+│   │   ├── model/         # Usuario, Producto, Venta, etc.
+│   │   ├── service/       # AuthService, ProductoService, VentaService
+│   │   └── repository/    # JsonRepository genérico
 │   └── resources/fxml/
-│       ├── login.fxml           # Diseño personalizado login
-│       └── ventas.fxml          # Diseño personalizado ventas
-├── usuarios.json                # Datos de usuarios
-├── productos.json               # Catálogo de productos
-└── ventas.json                  # Registro de ventas
+│       ├── login.fxml     # Diseño personalizado login
+│       └── ventas.fxml    # Diseño personalizado ventas
+├── usuarios.json          # Datos de usuarios
+├── productos.json         # Catálogo de productos
+└── ventas.json            # Registro de ventas
 
 
 
