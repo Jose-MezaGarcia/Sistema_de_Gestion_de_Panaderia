@@ -227,7 +227,7 @@ gestion-panaderia/
 - **Maven**
 
 ## Flujo de la Aplicación
-
+```
 Login (Dulce Tentación)
 ↓
 Autenticación
@@ -235,7 +235,7 @@ Autenticación
 Ventas (Sistema completo)
 ↓
 JSON (Persistencia)
-
+```
 
 
 ## Características Técnicas
