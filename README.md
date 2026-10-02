@@ -1,299 +1,407 @@
-# Dulce Tentación - Sistema de Gestión de Panadería
+# 🐄 MI RANCHO
 
-Sistema completo de gestión para panadería “Dulce Tentación”, desarrollado en Java con JavaFX, arquitectura MVC y persistencia JSON, que cumple con requerimientos funcionales y no funcionales para la operación integral del negocio. El sistema incluye módulos de productos, pedidos, inventario, ventas, clientes, facturación, reportes y una interfaz personalizada en tonos amarillos/dorados.
+> Plataforma móvil para la gestión y seguimiento de ganado mediante tecnología RFID.
 
- Trabajo en equipo
+## 📌 Descripción del proyecto
 
-Este proyecto fue desarrollado de manera colaborativa.
+**Mi Rancho** es una aplicación móvil diseñada para facilitar la gestión y seguimiento de ganado.
 
-💻 Mi participación
+El proyecto busca sustituir los registros tradicionales en papel mediante una solución digital que permita centralizar información relacionada con el ganado, incluyendo datos de identificación, salud, alimentación, reproducción y productividad.
 
-Mi principal responsabilidad dentro del equipo fue el **diseño y desarrollo de las interfaces gráficas del sistema**.
+Uno de los principales componentes del proyecto es la utilización de **tecnología RFID (Identificación por Radiofrecuencia)** para facilitar la identificación individual del ganado y el acceso a su información.
 
-Mis actividades incluyeron:
+La aplicación contempla escenarios de trabajo **offline y online**, permitiendo registrar y consultar información sin conexión y sincronizar los datos cuando exista conexión a Internet.
 
-- Diseño de la interfaz de inicio de sesión.
-- Diseño de la interfaz del módulo de ventas.
-- Creación y organización de los componentes visuales.
-- Definición de la identidad visual del sistema.
-- Selección de colores, estilos y elementos gráficos.
-- Diseño de botones, formularios, tablas y campos de entrada.
-- Implementación de interfaces utilizando **JavaFX y FXML**.
-- Aplicación de estilos visuales mediante CSS.
-- Organización de las pantallas para facilitar la navegación y experiencia de usuario.
-- Integración de las interfaces con las funcionalidades desarrolladas por el equipo.
+---
 
- Tecnologías utilizadas en mi participación
+## 🎯 Objetivo
 
-- JavaFX
-- FXML
-- CSS
-- Java
-- Scene Builder
+Desarrollar una solución digital que facilite la administración y seguimiento del ganado mediante:
 
+- 🐄 Registro del ganado y sus características.
+- 📡 Identificación mediante RFID.
+- 🩺 Consulta de historiales de salud y alimentación.
+- 🧬 Registro de reproducción y descendencia.
+- 📊 Generación de informes.
+- 📱 Acceso desde dispositivos móviles.
+- 🔄 Funcionamiento offline y sincronización posterior.
 
+---
 
-# Requerimientos
-# Requerimientos Funcionales - Sistema de Gestión de Panadería
+## 📱 Tipo de plataforma
 
+**Tipo:** Aplicación móvil
 
-## RF-01: Gestión de Productos
+**Plataformas:** Android e iOS
 
-**RF-01.1 - Mantenimiento de Catálogo de Productos**
-- El sistema permitirá crear, modificar, consultar y eliminar productos del catálogo de panadería, incluyendo panes artesanales, pasteles, galletas y productos horneados especializados.
-- Cada producto almacenará la siguiente información: nombre comercial, descripción detallada del producto, precio unitario de venta, estado de disponibilidad y clasificación por categoría.
+**Framework:** Flutter
 
-**RF-01.2 - Clasificación de Productos**
-- El sistema permitirá categorizar productos según su tipo: pan, pastel, galleta y otros productos horneados.
+**Lenguaje de programación:** Dart
 
+### Tecnologías utilizadas
 
+- **Flutter** — Framework para el desarrollo de la aplicación móvil.
+- **Dart** — Lenguaje de programación utilizado con Flutter.
+- **Firebase** — Base de datos y servicios en la nube.
+- **RFID** — Tecnología utilizada para la identificación del ganado.
+- **APIs** — Utilizadas para sincronización y generación de informes.
+- **Git / GitHub** — Control y organización del proyecto.
 
-## RF-02: Toma de Pedidos
+---
 
-**RF-02.1 - Registro de Pedidos**
-- El sistema permitirá registrar pedidos de clientes mediante la selección de productos del catálogo y la especificación de las cantidades requeridas.
-- Cada pedido registrará: fecha y hora de creación, identificación del cliente, productos solicitados con sus respectivas cantidades y estado actual del pedido.
+# ✨ Funcionalidades principales
 
-**RF-02.2 - Cálculo Automático de Total**
-- El sistema calculará automáticamente el precio total del pedido mediante la sumatoria de los subtotales de cada producto (precio unitario × cantidad).
+## 🐄 Gestión del ganado
 
+La aplicación contempla funciones para administrar la información de cada ejemplar:
 
+- Registro de ganado.
+- Identificación mediante nombre, número o referencia.
+- Registro de raza.
+- Registro de edad.
+- Registro de género.
+- Registro de fecha de nacimiento.
+- Registro de características físicas como peso, tamaño y color.
 
-## RF-03: Inventario y Control de Stock
+---
 
-**RF-03.1 - Gestión de Inventario**
-- El sistema permitirá registrar y actualizar las existencias de productos terminados disponibles en el establecimiento.
-- El sistema mantendrá un registro histórico completo de todos los movimientos de inventario, incluyendo entradas y salidas de mercancía.
+## 🩺 Historial de salud
 
-**RF-03.2 - Control de Disponibilidad**
-- El sistema validará la disponibilidad de productos en existencia antes de confirmar cualquier pedido.
-- El sistema actualizará automáticamente los niveles de inventario al momento de registrar cada venta.
+Permite contemplar información relacionada con la salud de cada ejemplar:
 
-**RF-03.3 - Alertas de Inventario Bajo**
-- El sistema generará alertas automáticas cuando los niveles de inventario de un producto alcancen o desciendan del punto de reorden previamente configurado.
+- Registro de vacunaciones.
+- Registro de enfermedades.
+- Registro de tratamientos.
+- Registro de exámenes médicos.
+- Consulta del historial de cada animal.
 
+---
 
+## 🧬 Reproducción y descendencia
 
-## RF-04: Registro de Ventas
+El sistema contempla el registro de información relacionada con la reproducción:
 
-**RF-04.1 - Historial de Ventas**
-- El sistema mantendrá un registro completo y detallado de todas las ventas realizadas, incluyendo: fecha y hora de la transacción, productos vendidos, cantidades comercializadas, precios aplicados y cliente asociado a la venta.
+- Registro de descendencia.
+- Asociación entre padres y crías.
+- Seguimiento de genealogía.
+- Registro de eventos relacionados con reproducción.
 
-**RF-04.2 - Consulta de Ventas Anteriores**
-- El sistema permitirá buscar y consultar ventas anteriores mediante filtros configurables por fecha, cliente o producto específico.
+---
 
+## 📡 Identificación mediante RFID
 
+Uno de los componentes principales del proyecto es la utilización de **RFID (Identificación por Radiofrecuencia)**.
 
-## RF-05: Gestión de Clientes
+Esta tecnología contempla la identificación individual del ganado y permite consultar su información de manera rápida.
 
-**RF-05.1 - Registro de Clientes**
-- El sistema permitirá crear, modificar, consultar y eliminar registros de clientes habituales del establecimiento.
-- Cada cliente almacenará: nombre completo, información de contacto (teléfono, correo electrónico, dirección postal) y preferencias personales.
+---
 
-**RF-05.2 - Programas de Lealtad**
-- El sistema permitirá administrar programas de lealtad y esquemas de descuentos especiales para clientes frecuentes.
-- El sistema registrará los puntos acumulados por cliente y los descuentos aplicables según el programa de fidelización.
+## 📊 Informes
 
+El proyecto contempla la generación de informes relacionados con:
 
+- Producción.
+- Estado del ganado.
+- Salud.
+- Información relevante para la gestión.
 
-## RF-06: Generación de Facturas o Recibos
+---
 
-**RF-06.1 - Emisión de Recibos**
-- El sistema generará recibos de venta con formato profesional y presentación estandarizada para cada transacción realizada.
+## 🔄 Funcionamiento Offline / Online
 
-**RF-06.2 - Contenido del Recibo**
-- Cada recibo incluirá de manera estructurada: número de folio consecutivo, fecha y hora de emisión, datos fiscales del negocio, detalle de productos vendidos con sus cantidades y precios unitarios, subtotal de la operación, descuentos aplicados (cuando corresponda), importe total y datos del cliente (si aplica).
+La aplicación contempla dos escenarios de funcionamiento:
 
+### 📵 Modo Offline
 
+Permite registrar y consultar información sin conexión a Internet.
 
-## RF-07: Descuentos y Promociones
+### 🌐 Modo Online
 
-**RF-07.1 - Aplicación de Descuentos**
-- El sistema permitirá aplicar descuentos tanto a productos específicos como al total general de la compra.
-- Los descuentos podrán configurarse como porcentaje de reducción o como monto fijo a descontar.
+Permite sincronizar los datos almacenados cuando vuelve a existir conexión.
 
-**RF-07.2 - Cálculo Automático de Descuentos**
-- El sistema calculará automáticamente los descuentos aplicables según las reglas de negocio configuradas y los aplicará al total de la venta de forma inmediata.
+---
 
+# 🎨 Mi participación
 
+## Cynthia356384 — UX/UI y Diseño Visual
 
-## RF-08: Reportes de Ventas y Finanzas
+Mi principal responsabilidad dentro de **Mi Rancho** fue desarrollar la parte gráfica y visual del proyecto, enfocándome en la experiencia de usuario y en la organización de la interfaz.
 
-**RF-08.1 - Reportes Periódicos de Ventas**
-- El sistema generará informes de ventas con periodicidad configurable: diaria, semanal, mensual y anual.
-- Los reportes incluirán: importe total de ventas del período, cantidad de transacciones realizadas y listado de productos más vendidos.
+### Mis responsabilidades
 
-**RF-08.2 - Análisis de Ventas**
-- El sistema proporcionará informes de análisis detallado de ventas por producto, categoría y período de tiempo seleccionado.
-- Los reportes incluirán representaciones gráficas y estadísticas comparativas para facilitar la toma de decisiones.
+- 🎨 Diseño de la interfaz de usuario.
+- 🖥️ Diseño y organización visual de las pantallas.
+- ✨ Desarrollo de la propuesta gráfica.
+- 👤 Diseño de la experiencia de usuario (UX).
+- 📐 Organización de los elementos visuales.
+- 📱 Diseño de una interfaz clara, funcional y fácil de utilizar.
+- 🤝 Colaboración con el equipo para alinear el diseño con las necesidades del proyecto.
 
+Mi participación estuvo enfocada principalmente en **UX/UI y Diseño Visual**.
 
+---
 
-## RF-09: Búsqueda y Consulta de Productos
+# 👥 Equipo y contribuciones
 
-**RF-09.1 - Búsqueda Rápida**
-- El sistema permitirá buscar productos mediante filtros configurables: nombre del producto, número de artículo y categoría.
-- La búsqueda mostrará resultados de manera inmediata en tiempo real.
+El proyecto fue desarrollado mediante trabajo colaborativo entre los integrantes del equipo.
 
-**RF-09.2 - Información Detallada de Productos**
-- El sistema mostrará información completa y detallada de cada producto: precio vigente, existencias actuales en inventario, descripción del producto y especificaciones técnicas relevantes.
+### 🎨 Cynthia356384 — UX/UI y Diseño Visual
 
+- Diseño de interfaz.
+- Diseño de experiencia de usuario.
+- Desarrollo de la propuesta gráfica.
+- Organización visual de las pantallas.
+- Participación en el equipo de desarrollo.
 
+### 📋 jazminfern4ndez — Área Administrativa
 
-## Requerimientos No Funcionales
+- Participación en el área administrativa.
+- Organización y seguimiento del proyecto.
+- Gestión de actividades del equipo.
 
-**RNF-01: Usabilidad**
-- El sistema contará con una interfaz gráfica de usuario intuitiva, amigable y de fácil navegación, desarrollada con tecnología **JavaFX**.
-- La navegación será clara y coherente, con pantallas y formularios organizados de manera lógica para facilitar las operaciones de gestión de productos, procesamiento de ventas, generación de reportes y demás funcionalidades del sistema.
-- La interfaz aprovechará los componentes modernos de JavaFX para asegurar una experiencia de usuario contemporánea, fluida y responsiva.
+### 💻 BrayanMaldonado-coder — Desarrollo
 
-**RNF-02: Tecnología**
-- El sistema será desarrollado utilizando **Java** como lenguaje de programación principal, aprovechando sus capacidades de programación orientada a objetos y portabilidad multiplataforma.
-- La interfaz gráfica de usuario se implementará con el framework **JavaFX** para proporcionar una experiencia visual moderna, consistente y de alto rendimiento.ramework **JavaFX** para proporcionar una experiencia visual moderna, consistente y de alto rendimiento.
+- Desarrollo e implementación de la solución.
+- Construcción de la aplicación.
+- Participación en las actividades del equipo de desarrollo.
 
+### 🧪 Jose-Meza1206 — Testing y Documentación
 
-# Dulce Tentación - Sistema de Gestión
+- Realización de pruebas.
+- Identificación y seguimiento de posibles problemas.
+- Elaboración y organización de documentación.
+- Apoyo en la validación de requerimientos.
 
-Sistema completo de gestión para panadería con diseño personalizado en tonos amarillos/dorados.
+### ✅ MichelleFirst — Control de Calidad
 
-## Características Especiales
+- Revisión de la calidad del proyecto.
+- Seguimiento del cumplimiento de requerimientos.
+- Apoyo en la validación del producto.
 
-- **Diseño Personalizado**: Interfaz con tema "Dulce Tentación" en colores amarillos/dorados
-- **Login Elegante**: Pantalla de bienvenida con efectos visuales
-- **Sistema de Ventas**: Búsqueda por código, cálculo automático
-- **Arquitectura MVC + SOLID**: Código limpio y mantenible
-- **Persistencia JSON**: Datos guardados con Gson
+---
 
-## Requisitos
-- Java 17 o superior
-- Maven 3.6 o superior
+# 🔄 Metodología de trabajo
 
-## Instalación y Ejecución
-```
-cd gestion-panaderia
-mvn clean compile
-mvn javafx:run
-```
+El desarrollo del proyecto se plantea utilizando la metodología **Scrum**.
 
-## Credenciales
+El equipo trabaja mediante **sprints de una semana**, en los cuales se establecen tareas, se revisan avances y se identifican problemas durante el desarrollo.
 
-- **Admin**: usuario: `admin` / contraseña: `admin123`
-- **Vendedor**: usuario: `vendedor` / contraseña: `vendedor123`
+Para la comunicación y coordinación del equipo se utiliza **Slack**.
 
-## Productos Disponibles
+## Roles de Scrum
 
-| Código | Producto | Precio |
-|--------|----------|--------|
-| 001 | Concha de Vainilla | $10.00 |
-| 002 | Croissant | $15.00 |
-| 003 | Pastel de Chocolate | $250.00 |
-| 004 | Dona Glaseada | $12.00 |
-| 005 | Pan Integral | $25.00 |
-| 006 | Cupcake de Fresa | $18.00 |
+- **Product Owner:** jazminfern4ndez
+- **Scrum Master:** MichelleFirst
+- **Development Team:**
+  - BrayanMaldonado-coder
+  - Cynthia356384
+  - Jose-Meza1206
 
-## Cómo Usar
+---
 
-### Realizar una Venta
+# 📋 Requerimientos funcionales
 
-1. **Login**: Inicia sesión con tus credenciales
-2. **Código**: Ingresa el código del producto (ej: 001) y presiona Enter
-3. **Cantidad**: Ingresa la cantidad deseada
-4. **Agregar**: Click en "Agregar" para añadir al carrito
-5. **Guardar**: Click en "Guardar Venta" para completar
+La propuesta contempla las siguientes funcionalidades:
 
-### Búsqueda Rápida
+1. Aplicación móvil para Android e iOS.
+2. Registro de ganado y sus características.
+3. Funcionamiento offline y online.
+4. Sincronización de información.
+5. Identificación mediante RFID.
+6. Registro de salud y alimentación.
+7. Registro de reproducción y descendencia.
+8. Registro de eventos importantes.
+9. Generación de informes.
+10. Acceso a información desde dispositivos móviles.
 
-- Escribe el código y presiona **Enter**
-- El sistema auto-completa el nombre y precio
-- Solo ingresa la cantidad y agrega
+---
 
-## Características del Diseño
+# 🔒 Requerimientos no funcionales
 
-### Login
-- Panel izquierdo con gradiente dorado
-- Campos redondeados con bordes naranja
-- Botones con efectos de sombra
-- Mensajes de error/éxito visibles
+El proyecto contempla los siguientes aspectos:
 
-### Ventas
-- Menú lateral amarillo con iconos
-- Tabla de productos con bordes redondeados
-- Campos auto-completados por código
-- Total calculado automáticamente
-- Botones con gradientes llamativos
+- 🔄 Disponibilidad.
+- 📈 Escalabilidad.
+- ⚡ Rendimiento.
+- 🔐 Seguridad.
+- 🖥️ Usabilidad.
+- 📱 Portabilidad.
+- 🔧 Mantenimiento.
+- ✅ Confiabilidad.
+- ⏱️ Tiempos de carga reducidos.
 
-## Estructura del Proyecto
-```
-gestion-panaderia/
-├── src/main/
-│   ├── java/com/example/gestion_panaderia/
-│   │   ├── controller/    # LoginController, VentaController
-│   │   ├── model/         # Usuario, Producto, Venta, etc.
-│   │   ├── service/       # AuthService, ProductoService, VentaService
-│   │   └── repository/    # JsonRepository genérico
-│   └── resources/fxml/
-│       ├── login.fxml     # Diseño personalizado login
-│       └── ventas.fxml    # Diseño personalizado ventas
-├── usuarios.json          # Datos de usuarios
-├── productos.json         # Catálogo de productos
-└── ventas.json            # Registro de ventas
-```
+---
 
+# 🔐 Seguridad
 
-## Principios Aplicados
-```
-**MVC** - Model View Controller
-**SOLID** - Principios de diseño
-**DI** - Dependency Injection
-**Repository Pattern** - Datos abstraídos
-**Generic Types** - Repositorio reutilizable
-```
+La propuesta contempla diferentes mecanismos para proteger la información:
 
-## Tecnologías
-- **Java 17**
-- **JavaFX 17**
-- **Gson 2.10.1**
-- **Maven**
+- Encriptación de datos.
+- Autenticación de usuarios.
+- Roles y permisos.
+- Protección de información almacenada localmente y en la nube.
 
-## Flujo de la Aplicación
-```
-Login (Dulce Tentación)
-↓
-Autenticación
-↓
-Ventas (Sistema completo)
-↓
-JSON (Persistencia)
-```
+El sistema contempla diferentes niveles de acceso dependiendo de las responsabilidades de cada usuario.
 
+---
 
-## Características Técnicas
+# 📱 Experiencia de usuario
 
-### Controllers Adaptados
-- `LoginController`: Usa IDs de tu FXML (btnAceptar, btnCancelar, boxMensaje)
-- `VentaController`: Búsqueda por código, auto-completado, tabla funcional
+Uno de los objetivos del proyecto es desarrollar una interfaz intuitiva para usuarios con diferentes niveles de conocimiento tecnológico.
 
-### Servicios
-- `AuthServiceImpl`: Autenticación contra JSON
-- `ProductoServiceImpl`: CRUD de productos
-- `VentaServiceImpl`: Registro de ventas
+La aplicación contempla procesos simples para:
 
-### Repositorio Genérico
-- `JsonRepository<T>`: Funciona con cualquier tipo
-- Métodos: cargar(), guardar(), findById(), eliminar()
+- Registrar ganado.
+- Consultar información.
+- Actualizar características.
+- Identificar ejemplares mediante RFID.
+- Consultar historiales.
+- Sincronizar información.
 
-## Personalización
+La propuesta busca reducir la cantidad de pasos necesarios para realizar las tareas principales.
 
-Los colores del tema son:
-- **Primario**: #FFB347 (Naranja claro)
-- **Secundario**: #FFCC33 (Amarillo)
-- **Acento**: #FF8C00 (Naranja oscuro)
-- **Fondo**: #FFFACD (Amarillo crema)
+---
 
-## Notas Importantes
+# 📊 Priorización del proyecto
 
-1. Los archivos JSON deben estar en la raíz del proyecto
-2. El stock se actualiza automáticamente al vender
-3. Búsqueda por código con auto-completado
-4. Todas las ventas se guardan con fecha y hora
-5. Diseño totalmente personalizado incluido
+La priorización de funcionalidades se plantea mediante la metodología **MoSCoW**.
+
+## 🔴 Must Have
+
+Funcionalidades esenciales:
+
+- Aplicación móvil.
+- Registro de ganado.
+- Registro de características.
+- Funcionamiento offline/online.
+- Sincronización de datos.
+
+## 🟡 Should Have
+
+Funcionalidades importantes:
+
+- Reconocimiento RFID.
+- Registros de reproducción.
+- Interfaz intuitiva y fácil de utilizar.
+
+## 🟢 Could Have
+
+Funcionalidades para futuras versiones:
+
+- Gráficas y estadísticas.
+- Notificaciones para vacunaciones y tratamientos.
+- Funcionalidades para compartir información.
+
+## ⚪ Won't Have
+
+Funcionalidades que no forman parte de esta etapa:
+
+- Integración con dispositivos de monitoreo de salud en tiempo real.
+- Comercio electrónico para venta de ganado.
+
+---
+
+# 📚 Artefactos del proyecto
+
+Durante la planificación del proyecto se contemplan diferentes artefactos:
+
+- 📄 Documentación de requerimientos.
+- 🎨 Prototipos de interfaz de usuario.
+- 🔧 Especificaciones técnicas.
+- 🧪 Plan de pruebas.
+- 📈 Informes de progreso.
+- 📖 Manual de usuario.
+
+---
+
+# 🧠 Competencias desarrolladas
+
+Durante el desarrollo del proyecto se trabajan diferentes competencias:
+
+- 🔍 Pensamiento crítico.
+- 🤝 Trabajo en equipo.
+- 📅 Gestión del tiempo.
+- 💻 Adaptabilidad.
+- 📈 Orientación a resultados.
+- 🎨 Diseño de interfaces.
+- 👤 Experiencia de usuario.
+- 🧪 Pruebas y control de calidad.
+- 📋 Gestión de proyectos.
+- 🔄 Trabajo con metodología Scrum.
+
+---
+
+# 📈 Estado actual del proyecto
+
+> 🟡 **Proyecto en fase de planificación y diseño**
+
+Actualmente se encuentran definidos los requerimientos funcionales y no funcionales del sistema.
+
+La siguiente etapa contempla comenzar con la implementación de las funcionalidades definidas.
+
+---
+
+# 🚀 Próximos pasos
+
+Entre las siguientes etapas del proyecto se contempla:
+
+1. Iniciar la implementación de la aplicación.
+2. Desarrollar las interfaces diseñadas.
+3. Implementar la gestión de ganado.
+4. Integrar Firebase.
+5. Trabajar en la integración RFID.
+6. Implementar el funcionamiento offline/online.
+7. Realizar pruebas.
+8. Validar las funcionalidades.
+9. Mejorar la experiencia de usuario.
+10. Preparar la presentación final del proyecto.
+
+---
+
+# 🤝 Trabajo colaborativo
+
+El proyecto se desarrolla mediante colaboración entre los integrantes del equipo.
+
+La organización de tareas, comunicación y seguimiento de avances permite distribuir responsabilidades entre las diferentes áreas del proyecto.
+
+---
+
+# 📂 Información del proyecto
+
+**Nombre:** Mi Rancho
+
+**Tipo:** Aplicación móvil
+
+**Plataformas:** Android / iOS
+
+**Framework:** Flutter
+
+**Lenguaje:** Dart
+
+**Tecnología de identificación:** RFID
+
+**Servicios:** Firebase
+
+**Metodología:** Scrum
+
+---
+
+# 👩‍💻 Cynthia Alessandra Aguilar Uicab
+
+**Ingeniera en Software | UX/UI | Diseño Visual**
+
+Mi participación en **Mi Rancho** está enfocada principalmente en:
+
+- 🎨 Diseño visual.
+- 📱 Diseño de interfaces.
+- 👤 Experiencia de usuario.
+- 📐 Organización visual.
+- 🤝 Trabajo colaborativo.
+
+---
+
+## ⭐ Mi Rancho
+
+**Plataforma móvil para la gestión y seguimiento de ganado mediante tecnología RFID.**
+
+**Flutter · Dart · Firebase · RFID · Git/GitHub**
