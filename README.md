@@ -2,6 +2,35 @@
 
 Sistema completo de gestión para panadería “Dulce Tentación”, desarrollado en Java con JavaFX, arquitectura MVC y persistencia JSON, que cumple con requerimientos funcionales y no funcionales para la operación integral del negocio. El sistema incluye módulos de productos, pedidos, inventario, ventas, clientes, facturación, reportes y una interfaz personalizada en tonos amarillos/dorados.
 
+ Trabajo en equipo
+
+Este proyecto fue desarrollado de manera colaborativa.
+
+💻 Mi participación
+
+Mi principal responsabilidad dentro del equipo fue el **diseño y desarrollo de las interfaces gráficas del sistema**.
+
+Mis actividades incluyeron:
+
+- Diseño de la interfaz de inicio de sesión.
+- Diseño de la interfaz del módulo de ventas.
+- Creación y organización de los componentes visuales.
+- Definición de la identidad visual del sistema.
+- Selección de colores, estilos y elementos gráficos.
+- Diseño de botones, formularios, tablas y campos de entrada.
+- Implementación de interfaces utilizando **JavaFX y FXML**.
+- Aplicación de estilos visuales mediante CSS.
+- Organización de las pantallas para facilitar la navegación y experiencia de usuario.
+- Integración de las interfaces con las funcionalidades desarrolladas por el equipo.
+
+ Tecnologías utilizadas en mi participación
+
+- JavaFX
+- FXML
+- CSS
+- Java
+- Scene Builder
+
 
 
 # Requerimientos
